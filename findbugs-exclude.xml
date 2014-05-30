@@ -1,0 +1,5 @@
+<FindBugsFilter>
+  <Match>
+    <Class name="com\.spotify\..*" />
+  </Match>
+</FindBugsFilter>
