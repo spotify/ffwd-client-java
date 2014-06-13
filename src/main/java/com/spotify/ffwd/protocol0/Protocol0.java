@@ -10,658 +10,222 @@ public final class Protocol0 {
   }
   public interface MetricOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
+    
     // optional string proc = 1;
-    /**
-     * <code>optional string proc = 1;</code>
-     *
-     * <pre>
-     * processor to use for metric.
-     * </pre>
-     */
     boolean hasProc();
-    /**
-     * <code>optional string proc = 1;</code>
-     *
-     * <pre>
-     * processor to use for metric.
-     * </pre>
-     */
-    java.lang.String getProc();
-    /**
-     * <code>optional string proc = 1;</code>
-     *
-     * <pre>
-     * processor to use for metric.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getProcBytes();
-
+    String getProc();
+    
     // optional int64 time = 2;
-    /**
-     * <code>optional int64 time = 2;</code>
-     *
-     * <pre>
-     * time in ms when metric was generated.
-     * </pre>
-     */
     boolean hasTime();
-    /**
-     * <code>optional int64 time = 2;</code>
-     *
-     * <pre>
-     * time in ms when metric was generated.
-     * </pre>
-     */
     long getTime();
-
+    
     // optional string key = 3;
-    /**
-     * <code>optional string key = 3;</code>
-     *
-     * <pre>
-     * key of metric.
-     * </pre>
-     */
     boolean hasKey();
-    /**
-     * <code>optional string key = 3;</code>
-     *
-     * <pre>
-     * key of metric.
-     * </pre>
-     */
-    java.lang.String getKey();
-    /**
-     * <code>optional string key = 3;</code>
-     *
-     * <pre>
-     * key of metric.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
+    String getKey();
+    
     // optional double value = 4;
-    /**
-     * <code>optional double value = 4;</code>
-     *
-     * <pre>
-     * value of metric.
-     * </pre>
-     */
     boolean hasValue();
-    /**
-     * <code>optional double value = 4;</code>
-     *
-     * <pre>
-     * value of metric.
-     * </pre>
-     */
     double getValue();
-
+    
     // optional string host = 5;
-    /**
-     * <code>optional string host = 5;</code>
-     *
-     * <pre>
-     * host where metric originated.
-     * </pre>
-     */
     boolean hasHost();
-    /**
-     * <code>optional string host = 5;</code>
-     *
-     * <pre>
-     * host where metric originated.
-     * </pre>
-     */
-    java.lang.String getHost();
-    /**
-     * <code>optional string host = 5;</code>
-     *
-     * <pre>
-     * host where metric originated.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getHostBytes();
-
+    String getHost();
+    
     // repeated string tags = 6;
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
-    java.util.List<java.lang.String>
-    getTagsList();
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
+    java.util.List<String> getTagsList();
     int getTagsCount();
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
-    java.lang.String getTags(int index);
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
-
+    String getTags(int index);
+    
     // repeated .FFWD.Protocol0.Attribute attributes = 7;
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> 
         getAttributesList();
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     com.spotify.ffwd.protocol0.Protocol0.Attribute getAttributes(int index);
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     int getAttributesCount();
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     java.util.List<? extends com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> 
         getAttributesOrBuilderList();
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder getAttributesOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code FFWD.Protocol0.Metric}
-   */
   public static final class Metric extends
       com.google.protobuf.GeneratedMessage
       implements MetricOrBuilder {
     // Use Metric.newBuilder() to construct.
-    private Metric(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private Metric(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private Metric(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
+    private Metric(boolean noInit) {}
+    
     private static final Metric defaultInstance;
     public static Metric getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Metric getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Metric(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              proc_ = input.readBytes();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              time_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              key_ = input.readBytes();
-              break;
-            }
-            case 33: {
-              bitField0_ |= 0x00000008;
-              value_ = input.readDouble();
-              break;
-            }
-            case 42: {
-              bitField0_ |= 0x00000010;
-              host_ = input.readBytes();
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              tags_.add(input.readBytes());
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                attributes_ = new java.util.ArrayList<com.spotify.ffwd.protocol0.Protocol0.Attribute>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              attributes_.add(input.readMessage(com.spotify.ffwd.protocol0.Protocol0.Attribute.PARSER, extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          tags_ = new com.google.protobuf.UnmodifiableLazyStringList(tags_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-          attributes_ = java.util.Collections.unmodifiableList(attributes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.spotify.ffwd.protocol0.Protocol0.Metric.class, com.spotify.ffwd.protocol0.Protocol0.Metric.Builder.class);
+      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<Metric> PARSER =
-        new com.google.protobuf.AbstractParser<Metric>() {
-      public Metric parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Metric(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Metric> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // optional string proc = 1;
     public static final int PROC_FIELD_NUMBER = 1;
     private java.lang.Object proc_;
-    /**
-     * <code>optional string proc = 1;</code>
-     *
-     * <pre>
-     * processor to use for metric.
-     * </pre>
-     */
     public boolean hasProc() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>optional string proc = 1;</code>
-     *
-     * <pre>
-     * processor to use for metric.
-     * </pre>
-     */
-    public java.lang.String getProc() {
+    public String getProc() {
       java.lang.Object ref = proc_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           proc_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string proc = 1;</code>
-     *
-     * <pre>
-     * processor to use for metric.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getProcBytes() {
+    private com.google.protobuf.ByteString getProcBytes() {
       java.lang.Object ref = proc_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         proc_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional int64 time = 2;
     public static final int TIME_FIELD_NUMBER = 2;
     private long time_;
-    /**
-     * <code>optional int64 time = 2;</code>
-     *
-     * <pre>
-     * time in ms when metric was generated.
-     * </pre>
-     */
     public boolean hasTime() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional int64 time = 2;</code>
-     *
-     * <pre>
-     * time in ms when metric was generated.
-     * </pre>
-     */
     public long getTime() {
       return time_;
     }
-
+    
     // optional string key = 3;
     public static final int KEY_FIELD_NUMBER = 3;
     private java.lang.Object key_;
-    /**
-     * <code>optional string key = 3;</code>
-     *
-     * <pre>
-     * key of metric.
-     * </pre>
-     */
     public boolean hasKey() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    /**
-     * <code>optional string key = 3;</code>
-     *
-     * <pre>
-     * key of metric.
-     * </pre>
-     */
-    public java.lang.String getKey() {
+    public String getKey() {
       java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           key_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string key = 3;</code>
-     *
-     * <pre>
-     * key of metric.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
+    private com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         key_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional double value = 4;
     public static final int VALUE_FIELD_NUMBER = 4;
     private double value_;
-    /**
-     * <code>optional double value = 4;</code>
-     *
-     * <pre>
-     * value of metric.
-     * </pre>
-     */
     public boolean hasValue() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
-    /**
-     * <code>optional double value = 4;</code>
-     *
-     * <pre>
-     * value of metric.
-     * </pre>
-     */
     public double getValue() {
       return value_;
     }
-
+    
     // optional string host = 5;
     public static final int HOST_FIELD_NUMBER = 5;
     private java.lang.Object host_;
-    /**
-     * <code>optional string host = 5;</code>
-     *
-     * <pre>
-     * host where metric originated.
-     * </pre>
-     */
     public boolean hasHost() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
-    /**
-     * <code>optional string host = 5;</code>
-     *
-     * <pre>
-     * host where metric originated.
-     * </pre>
-     */
-    public java.lang.String getHost() {
+    public String getHost() {
       java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           host_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string host = 5;</code>
-     *
-     * <pre>
-     * host where metric originated.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getHostBytes() {
+    private com.google.protobuf.ByteString getHostBytes() {
       java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         host_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // repeated string tags = 6;
     public static final int TAGS_FIELD_NUMBER = 6;
     private com.google.protobuf.LazyStringList tags_;
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
-    public java.util.List<java.lang.String>
+    public java.util.List<String>
         getTagsList() {
       return tags_;
     }
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
     public int getTagsCount() {
       return tags_.size();
     }
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
-    public java.lang.String getTags(int index) {
+    public String getTags(int index) {
       return tags_.get(index);
     }
-    /**
-     * <code>repeated string tags = 6;</code>
-     *
-     * <pre>
-     * tags associated to metric.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
-    }
-
+    
     // repeated .FFWD.Protocol0.Attribute attributes = 7;
     public static final int ATTRIBUTES_FIELD_NUMBER = 7;
     private java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> attributes_;
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     public java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> getAttributesList() {
       return attributes_;
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     public java.util.List<? extends com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> 
         getAttributesOrBuilderList() {
       return attributes_;
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     public int getAttributesCount() {
       return attributes_.size();
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.Attribute getAttributes(int index) {
       return attributes_.get(index);
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-     *
-     * <pre>
-     * attributes associated to metric.
-     * </pre>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder getAttributesOrBuilder(
         int index) {
       return attributes_.get(index);
     }
-
+    
     private void initFields() {
       proc_ = "";
       time_ = 0L;
@@ -675,7 +239,7 @@ public final class Protocol0 {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       for (int i = 0; i < getAttributesCount(); i++) {
         if (!getAttributes(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -685,7 +249,7 @@ public final class Protocol0 {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -712,12 +276,12 @@ public final class Protocol0 {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -756,83 +320,94 @@ public final class Protocol0 {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Metric parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.spotify.ffwd.protocol0.Protocol0.Metric prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code FFWD.Protocol0.Metric}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.spotify.ffwd.protocol0.Protocol0.MetricOrBuilder {
@@ -840,21 +415,18 @@ public final class Protocol0 {
           getDescriptor() {
         return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.spotify.ffwd.protocol0.Protocol0.Metric.class, com.spotify.ffwd.protocol0.Protocol0.Metric.Builder.class);
+        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_fieldAccessorTable;
       }
-
+      
       // Construct using com.spotify.ffwd.protocol0.Protocol0.Metric.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -866,7 +438,7 @@ public final class Protocol0 {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         proc_ = "";
@@ -889,20 +461,20 @@ public final class Protocol0 {
         }
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Metric_descriptor;
+        return com.spotify.ffwd.protocol0.Protocol0.Metric.getDescriptor();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Metric getDefaultInstanceForType() {
         return com.spotify.ffwd.protocol0.Protocol0.Metric.getDefaultInstance();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Metric build() {
         com.spotify.ffwd.protocol0.Protocol0.Metric result = buildPartial();
         if (!result.isInitialized()) {
@@ -910,7 +482,17 @@ public final class Protocol0 {
         }
         return result;
       }
-
+      
+      private com.spotify.ffwd.protocol0.Protocol0.Metric buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.spotify.ffwd.protocol0.Protocol0.Metric result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public com.spotify.ffwd.protocol0.Protocol0.Metric buildPartial() {
         com.spotify.ffwd.protocol0.Protocol0.Metric result = new com.spotify.ffwd.protocol0.Protocol0.Metric(this);
         int from_bitField0_ = bitField0_;
@@ -954,7 +536,7 @@ public final class Protocol0 {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.spotify.ffwd.protocol0.Protocol0.Metric) {
           return mergeFrom((com.spotify.ffwd.protocol0.Protocol0.Metric)other);
@@ -963,29 +545,23 @@ public final class Protocol0 {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(com.spotify.ffwd.protocol0.Protocol0.Metric other) {
         if (other == com.spotify.ffwd.protocol0.Protocol0.Metric.getDefaultInstance()) return this;
         if (other.hasProc()) {
-          bitField0_ |= 0x00000001;
-          proc_ = other.proc_;
-          onChanged();
+          setProc(other.getProc());
         }
         if (other.hasTime()) {
           setTime(other.getTime());
         }
         if (other.hasKey()) {
-          bitField0_ |= 0x00000004;
-          key_ = other.key_;
-          onChanged();
+          setKey(other.getKey());
         }
         if (other.hasValue()) {
           setValue(other.getValue());
         }
         if (other.hasHost()) {
-          bitField0_ |= 0x00000010;
-          host_ = other.host_;
-          onChanged();
+          setHost(other.getHost());
         }
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
@@ -1026,7 +602,7 @@ public final class Protocol0 {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         for (int i = 0; i < getAttributesCount(); i++) {
           if (!getAttributes(i).isInitialized()) {
@@ -1036,85 +612,88 @@ public final class Protocol0 {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.spotify.ffwd.protocol0.Protocol0.Metric parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.spotify.ffwd.protocol0.Protocol0.Metric) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              proc_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              time_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              key_ = input.readBytes();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
+              value_ = input.readDouble();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              host_ = input.readBytes();
+              break;
+            }
+            case 50: {
+              ensureTagsIsMutable();
+              tags_.add(input.readBytes());
+              break;
+            }
+            case 58: {
+              com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder subBuilder = com.spotify.ffwd.protocol0.Protocol0.Attribute.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addAttributes(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // optional string proc = 1;
       private java.lang.Object proc_ = "";
-      /**
-       * <code>optional string proc = 1;</code>
-       *
-       * <pre>
-       * processor to use for metric.
-       * </pre>
-       */
       public boolean hasProc() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>optional string proc = 1;</code>
-       *
-       * <pre>
-       * processor to use for metric.
-       * </pre>
-       */
-      public java.lang.String getProc() {
+      public String getProc() {
         java.lang.Object ref = proc_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           proc_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string proc = 1;</code>
-       *
-       * <pre>
-       * processor to use for metric.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getProcBytes() {
-        java.lang.Object ref = proc_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          proc_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string proc = 1;</code>
-       *
-       * <pre>
-       * processor to use for metric.
-       * </pre>
-       */
-      public Builder setProc(
-          java.lang.String value) {
+      public Builder setProc(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1123,145 +702,55 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string proc = 1;</code>
-       *
-       * <pre>
-       * processor to use for metric.
-       * </pre>
-       */
       public Builder clearProc() {
         bitField0_ = (bitField0_ & ~0x00000001);
         proc_ = getDefaultInstance().getProc();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string proc = 1;</code>
-       *
-       * <pre>
-       * processor to use for metric.
-       * </pre>
-       */
-      public Builder setProcBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      void setProc(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
         proc_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional int64 time = 2;
       private long time_ ;
-      /**
-       * <code>optional int64 time = 2;</code>
-       *
-       * <pre>
-       * time in ms when metric was generated.
-       * </pre>
-       */
       public boolean hasTime() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional int64 time = 2;</code>
-       *
-       * <pre>
-       * time in ms when metric was generated.
-       * </pre>
-       */
       public long getTime() {
         return time_;
       }
-      /**
-       * <code>optional int64 time = 2;</code>
-       *
-       * <pre>
-       * time in ms when metric was generated.
-       * </pre>
-       */
       public Builder setTime(long value) {
         bitField0_ |= 0x00000002;
         time_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>optional int64 time = 2;</code>
-       *
-       * <pre>
-       * time in ms when metric was generated.
-       * </pre>
-       */
       public Builder clearTime() {
         bitField0_ = (bitField0_ & ~0x00000002);
         time_ = 0L;
         onChanged();
         return this;
       }
-
+      
       // optional string key = 3;
       private java.lang.Object key_ = "";
-      /**
-       * <code>optional string key = 3;</code>
-       *
-       * <pre>
-       * key of metric.
-       * </pre>
-       */
       public boolean hasKey() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>optional string key = 3;</code>
-       *
-       * <pre>
-       * key of metric.
-       * </pre>
-       */
-      public java.lang.String getKey() {
+      public String getKey() {
         java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string key = 3;</code>
-       *
-       * <pre>
-       * key of metric.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string key = 3;</code>
-       *
-       * <pre>
-       * key of metric.
-       * </pre>
-       */
-      public Builder setKey(
-          java.lang.String value) {
+      public Builder setKey(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1270,145 +759,55 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string key = 3;</code>
-       *
-       * <pre>
-       * key of metric.
-       * </pre>
-       */
       public Builder clearKey() {
         bitField0_ = (bitField0_ & ~0x00000004);
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string key = 3;</code>
-       *
-       * <pre>
-       * key of metric.
-       * </pre>
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+      void setKey(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
         key_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional double value = 4;
       private double value_ ;
-      /**
-       * <code>optional double value = 4;</code>
-       *
-       * <pre>
-       * value of metric.
-       * </pre>
-       */
       public boolean hasValue() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
-      /**
-       * <code>optional double value = 4;</code>
-       *
-       * <pre>
-       * value of metric.
-       * </pre>
-       */
       public double getValue() {
         return value_;
       }
-      /**
-       * <code>optional double value = 4;</code>
-       *
-       * <pre>
-       * value of metric.
-       * </pre>
-       */
       public Builder setValue(double value) {
         bitField0_ |= 0x00000008;
         value_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>optional double value = 4;</code>
-       *
-       * <pre>
-       * value of metric.
-       * </pre>
-       */
       public Builder clearValue() {
         bitField0_ = (bitField0_ & ~0x00000008);
         value_ = 0D;
         onChanged();
         return this;
       }
-
+      
       // optional string host = 5;
       private java.lang.Object host_ = "";
-      /**
-       * <code>optional string host = 5;</code>
-       *
-       * <pre>
-       * host where metric originated.
-       * </pre>
-       */
       public boolean hasHost() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
-      /**
-       * <code>optional string host = 5;</code>
-       *
-       * <pre>
-       * host where metric originated.
-       * </pre>
-       */
-      public java.lang.String getHost() {
+      public String getHost() {
         java.lang.Object ref = host_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           host_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string host = 5;</code>
-       *
-       * <pre>
-       * host where metric originated.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getHostBytes() {
-        java.lang.Object ref = host_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          host_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string host = 5;</code>
-       *
-       * <pre>
-       * host where metric originated.
-       * </pre>
-       */
-      public Builder setHost(
-          java.lang.String value) {
+      public Builder setHost(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1417,37 +816,18 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string host = 5;</code>
-       *
-       * <pre>
-       * host where metric originated.
-       * </pre>
-       */
       public Builder clearHost() {
         bitField0_ = (bitField0_ & ~0x00000010);
         host_ = getDefaultInstance().getHost();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string host = 5;</code>
-       *
-       * <pre>
-       * host where metric originated.
-       * </pre>
-       */
-      public Builder setHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+      void setHost(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
         host_ = value;
         onChanged();
-        return this;
       }
-
+      
       // repeated string tags = 6;
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
@@ -1456,57 +836,18 @@ public final class Protocol0 {
           bitField0_ |= 0x00000020;
          }
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
-      public java.util.List<java.lang.String>
+      public java.util.List<String>
           getTagsList() {
         return java.util.Collections.unmodifiableList(tags_);
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
       public int getTagsCount() {
         return tags_.size();
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
-      public java.lang.String getTags(int index) {
+      public String getTags(int index) {
         return tags_.get(index);
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
       public Builder setTags(
-          int index, java.lang.String value) {
+          int index, String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1515,15 +856,7 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
-      public Builder addTags(
-          java.lang.String value) {
+      public Builder addTags(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1532,51 +865,25 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
       public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
+          java.lang.Iterable<String> values) {
         ensureTagsIsMutable();
         super.addAll(values, tags_);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 6;</code>
-       *
-       * <pre>
-       * tags associated to metric.
-       * </pre>
-       */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+      void addTags(com.google.protobuf.ByteString value) {
+        ensureTagsIsMutable();
         tags_.add(value);
         onChanged();
-        return this;
       }
-
+      
       // repeated .FFWD.Protocol0.Attribute attributes = 7;
       private java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> attributes_ =
         java.util.Collections.emptyList();
@@ -1586,17 +893,10 @@ public final class Protocol0 {
           bitField0_ |= 0x00000040;
          }
       }
-
+      
       private com.google.protobuf.RepeatedFieldBuilder<
           com.spotify.ffwd.protocol0.Protocol0.Attribute, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder, com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> attributesBuilder_;
-
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
+      
       public java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> getAttributesList() {
         if (attributesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(attributes_);
@@ -1604,13 +904,6 @@ public final class Protocol0 {
           return attributesBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public int getAttributesCount() {
         if (attributesBuilder_ == null) {
           return attributes_.size();
@@ -1618,13 +911,6 @@ public final class Protocol0 {
           return attributesBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute getAttributes(int index) {
         if (attributesBuilder_ == null) {
           return attributes_.get(index);
@@ -1632,13 +918,6 @@ public final class Protocol0 {
           return attributesBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder setAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute value) {
         if (attributesBuilder_ == null) {
@@ -1653,13 +932,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder setAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder builderForValue) {
         if (attributesBuilder_ == null) {
@@ -1671,13 +943,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder addAttributes(com.spotify.ffwd.protocol0.Protocol0.Attribute value) {
         if (attributesBuilder_ == null) {
           if (value == null) {
@@ -1691,13 +956,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder addAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute value) {
         if (attributesBuilder_ == null) {
@@ -1712,13 +970,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder addAttributes(
           com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder builderForValue) {
         if (attributesBuilder_ == null) {
@@ -1730,13 +981,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder addAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder builderForValue) {
         if (attributesBuilder_ == null) {
@@ -1748,13 +992,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder addAllAttributes(
           java.lang.Iterable<? extends com.spotify.ffwd.protocol0.Protocol0.Attribute> values) {
         if (attributesBuilder_ == null) {
@@ -1766,13 +1003,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder clearAttributes() {
         if (attributesBuilder_ == null) {
           attributes_ = java.util.Collections.emptyList();
@@ -1783,13 +1013,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public Builder removeAttributes(int index) {
         if (attributesBuilder_ == null) {
           ensureAttributesIsMutable();
@@ -1800,24 +1023,10 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder getAttributesBuilder(
           int index) {
         return getAttributesFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder getAttributesOrBuilder(
           int index) {
         if (attributesBuilder_ == null) {
@@ -1825,13 +1034,6 @@ public final class Protocol0 {
           return attributesBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public java.util.List<? extends com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> 
            getAttributesOrBuilderList() {
         if (attributesBuilder_ != null) {
@@ -1840,36 +1042,15 @@ public final class Protocol0 {
           return java.util.Collections.unmodifiableList(attributes_);
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder addAttributesBuilder() {
         return getAttributesFieldBuilder().addBuilder(
             com.spotify.ffwd.protocol0.Protocol0.Attribute.getDefaultInstance());
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder addAttributesBuilder(
           int index) {
         return getAttributesFieldBuilder().addBuilder(
             index, com.spotify.ffwd.protocol0.Protocol0.Attribute.getDefaultInstance());
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 7;</code>
-       *
-       * <pre>
-       * attributes associated to metric.
-       * </pre>
-       */
       public java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder> 
            getAttributesBuilderList() {
         return getAttributesFieldBuilder().getBuilderList();
@@ -1888,806 +1069,286 @@ public final class Protocol0 {
         }
         return attributesBuilder_;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:FFWD.Protocol0.Metric)
     }
-
+    
     static {
       defaultInstance = new Metric(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:FFWD.Protocol0.Metric)
   }
-
+  
   public interface EventOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
+    
     // optional int64 time = 1;
-    /**
-     * <code>optional int64 time = 1;</code>
-     *
-     * <pre>
-     * time in ms when the event was generated.
-     * </pre>
-     */
     boolean hasTime();
-    /**
-     * <code>optional int64 time = 1;</code>
-     *
-     * <pre>
-     * time in ms when the event was generated.
-     * </pre>
-     */
     long getTime();
-
+    
     // optional string key = 2;
-    /**
-     * <code>optional string key = 2;</code>
-     *
-     * <pre>
-     * key of event.
-     * </pre>
-     */
     boolean hasKey();
-    /**
-     * <code>optional string key = 2;</code>
-     *
-     * <pre>
-     * key of event.
-     * </pre>
-     */
-    java.lang.String getKey();
-    /**
-     * <code>optional string key = 2;</code>
-     *
-     * <pre>
-     * key of event.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
+    String getKey();
+    
     // optional double value = 3;
-    /**
-     * <code>optional double value = 3;</code>
-     *
-     * <pre>
-     * value of event.
-     * </pre>
-     */
     boolean hasValue();
-    /**
-     * <code>optional double value = 3;</code>
-     *
-     * <pre>
-     * value of event.
-     * </pre>
-     */
     double getValue();
-
+    
     // optional string host = 4;
-    /**
-     * <code>optional string host = 4;</code>
-     *
-     * <pre>
-     * host where event originated.
-     * </pre>
-     */
     boolean hasHost();
-    /**
-     * <code>optional string host = 4;</code>
-     *
-     * <pre>
-     * host where event originated.
-     * </pre>
-     */
-    java.lang.String getHost();
-    /**
-     * <code>optional string host = 4;</code>
-     *
-     * <pre>
-     * host where event originated.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getHostBytes();
-
+    String getHost();
+    
     // optional string state = 5;
-    /**
-     * <code>optional string state = 5;</code>
-     *
-     * <pre>
-     * indicated state of this event.
-     * </pre>
-     */
     boolean hasState();
-    /**
-     * <code>optional string state = 5;</code>
-     *
-     * <pre>
-     * indicated state of this event.
-     * </pre>
-     */
-    java.lang.String getState();
-    /**
-     * <code>optional string state = 5;</code>
-     *
-     * <pre>
-     * indicated state of this event.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getStateBytes();
-
+    String getState();
+    
     // optional string description = 6;
-    /**
-     * <code>optional string description = 6;</code>
-     *
-     * <pre>
-     * description of event.
-     * </pre>
-     */
     boolean hasDescription();
-    /**
-     * <code>optional string description = 6;</code>
-     *
-     * <pre>
-     * description of event.
-     * </pre>
-     */
-    java.lang.String getDescription();
-    /**
-     * <code>optional string description = 6;</code>
-     *
-     * <pre>
-     * description of event.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getDescriptionBytes();
-
+    String getDescription();
+    
     // optional int64 ttl = 7;
-    /**
-     * <code>optional int64 ttl = 7;</code>
-     *
-     * <pre>
-     * time this event should be considered valid in seconds.
-     * </pre>
-     */
     boolean hasTtl();
-    /**
-     * <code>optional int64 ttl = 7;</code>
-     *
-     * <pre>
-     * time this event should be considered valid in seconds.
-     * </pre>
-     */
     long getTtl();
-
+    
     // repeated string tags = 8;
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
-    java.util.List<java.lang.String>
-    getTagsList();
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
+    java.util.List<String> getTagsList();
     int getTagsCount();
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
-    java.lang.String getTags(int index);
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
-
+    String getTags(int index);
+    
     // repeated .FFWD.Protocol0.Attribute attributes = 9;
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> 
         getAttributesList();
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     com.spotify.ffwd.protocol0.Protocol0.Attribute getAttributes(int index);
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     int getAttributesCount();
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     java.util.List<? extends com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> 
         getAttributesOrBuilderList();
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder getAttributesOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code FFWD.Protocol0.Event}
-   */
   public static final class Event extends
       com.google.protobuf.GeneratedMessage
       implements EventOrBuilder {
     // Use Event.newBuilder() to construct.
-    private Event(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private Event(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private Event(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
+    private Event(boolean noInit) {}
+    
     private static final Event defaultInstance;
     public static Event getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Event getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Event(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              time_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              key_ = input.readBytes();
-              break;
-            }
-            case 25: {
-              bitField0_ |= 0x00000004;
-              value_ = input.readDouble();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              host_ = input.readBytes();
-              break;
-            }
-            case 42: {
-              bitField0_ |= 0x00000010;
-              state_ = input.readBytes();
-              break;
-            }
-            case 50: {
-              bitField0_ |= 0x00000020;
-              description_ = input.readBytes();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              ttl_ = input.readInt64();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              tags_.add(input.readBytes());
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                attributes_ = new java.util.ArrayList<com.spotify.ffwd.protocol0.Protocol0.Attribute>();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              attributes_.add(input.readMessage(com.spotify.ffwd.protocol0.Protocol0.Attribute.PARSER, extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-          tags_ = new com.google.protobuf.UnmodifiableLazyStringList(tags_);
-        }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-          attributes_ = java.util.Collections.unmodifiableList(attributes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.spotify.ffwd.protocol0.Protocol0.Event.class, com.spotify.ffwd.protocol0.Protocol0.Event.Builder.class);
+      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<Event> PARSER =
-        new com.google.protobuf.AbstractParser<Event>() {
-      public Event parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Event(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Event> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // optional int64 time = 1;
     public static final int TIME_FIELD_NUMBER = 1;
     private long time_;
-    /**
-     * <code>optional int64 time = 1;</code>
-     *
-     * <pre>
-     * time in ms when the event was generated.
-     * </pre>
-     */
     public boolean hasTime() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>optional int64 time = 1;</code>
-     *
-     * <pre>
-     * time in ms when the event was generated.
-     * </pre>
-     */
     public long getTime() {
       return time_;
     }
-
+    
     // optional string key = 2;
     public static final int KEY_FIELD_NUMBER = 2;
     private java.lang.Object key_;
-    /**
-     * <code>optional string key = 2;</code>
-     *
-     * <pre>
-     * key of event.
-     * </pre>
-     */
     public boolean hasKey() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional string key = 2;</code>
-     *
-     * <pre>
-     * key of event.
-     * </pre>
-     */
-    public java.lang.String getKey() {
+    public String getKey() {
       java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           key_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string key = 2;</code>
-     *
-     * <pre>
-     * key of event.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
+    private com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         key_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional double value = 3;
     public static final int VALUE_FIELD_NUMBER = 3;
     private double value_;
-    /**
-     * <code>optional double value = 3;</code>
-     *
-     * <pre>
-     * value of event.
-     * </pre>
-     */
     public boolean hasValue() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    /**
-     * <code>optional double value = 3;</code>
-     *
-     * <pre>
-     * value of event.
-     * </pre>
-     */
     public double getValue() {
       return value_;
     }
-
+    
     // optional string host = 4;
     public static final int HOST_FIELD_NUMBER = 4;
     private java.lang.Object host_;
-    /**
-     * <code>optional string host = 4;</code>
-     *
-     * <pre>
-     * host where event originated.
-     * </pre>
-     */
     public boolean hasHost() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
-    /**
-     * <code>optional string host = 4;</code>
-     *
-     * <pre>
-     * host where event originated.
-     * </pre>
-     */
-    public java.lang.String getHost() {
+    public String getHost() {
       java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           host_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string host = 4;</code>
-     *
-     * <pre>
-     * host where event originated.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getHostBytes() {
+    private com.google.protobuf.ByteString getHostBytes() {
       java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         host_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional string state = 5;
     public static final int STATE_FIELD_NUMBER = 5;
     private java.lang.Object state_;
-    /**
-     * <code>optional string state = 5;</code>
-     *
-     * <pre>
-     * indicated state of this event.
-     * </pre>
-     */
     public boolean hasState() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
-    /**
-     * <code>optional string state = 5;</code>
-     *
-     * <pre>
-     * indicated state of this event.
-     * </pre>
-     */
-    public java.lang.String getState() {
+    public String getState() {
       java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           state_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string state = 5;</code>
-     *
-     * <pre>
-     * indicated state of this event.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getStateBytes() {
+    private com.google.protobuf.ByteString getStateBytes() {
       java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         state_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional string description = 6;
     public static final int DESCRIPTION_FIELD_NUMBER = 6;
     private java.lang.Object description_;
-    /**
-     * <code>optional string description = 6;</code>
-     *
-     * <pre>
-     * description of event.
-     * </pre>
-     */
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
-    /**
-     * <code>optional string description = 6;</code>
-     *
-     * <pre>
-     * description of event.
-     * </pre>
-     */
-    public java.lang.String getDescription() {
+    public String getDescription() {
       java.lang.Object ref = description_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           description_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string description = 6;</code>
-     *
-     * <pre>
-     * description of event.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    private com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         description_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional int64 ttl = 7;
     public static final int TTL_FIELD_NUMBER = 7;
     private long ttl_;
-    /**
-     * <code>optional int64 ttl = 7;</code>
-     *
-     * <pre>
-     * time this event should be considered valid in seconds.
-     * </pre>
-     */
     public boolean hasTtl() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
-    /**
-     * <code>optional int64 ttl = 7;</code>
-     *
-     * <pre>
-     * time this event should be considered valid in seconds.
-     * </pre>
-     */
     public long getTtl() {
       return ttl_;
     }
-
+    
     // repeated string tags = 8;
     public static final int TAGS_FIELD_NUMBER = 8;
     private com.google.protobuf.LazyStringList tags_;
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
-    public java.util.List<java.lang.String>
+    public java.util.List<String>
         getTagsList() {
       return tags_;
     }
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
     public int getTagsCount() {
       return tags_.size();
     }
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
-    public java.lang.String getTags(int index) {
+    public String getTags(int index) {
       return tags_.get(index);
     }
-    /**
-     * <code>repeated string tags = 8;</code>
-     *
-     * <pre>
-     * tags associated to event.
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
-    }
-
+    
     // repeated .FFWD.Protocol0.Attribute attributes = 9;
     public static final int ATTRIBUTES_FIELD_NUMBER = 9;
     private java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> attributes_;
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     public java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> getAttributesList() {
       return attributes_;
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     public java.util.List<? extends com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> 
         getAttributesOrBuilderList() {
       return attributes_;
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     public int getAttributesCount() {
       return attributes_.size();
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.Attribute getAttributes(int index) {
       return attributes_.get(index);
     }
-    /**
-     * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-     *
-     * <pre>
-     * attributes associated to event.
-     * </pre>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder getAttributesOrBuilder(
         int index) {
       return attributes_.get(index);
     }
-
+    
     private void initFields() {
       time_ = 0L;
       key_ = "";
@@ -2703,7 +1364,7 @@ public final class Protocol0 {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       for (int i = 0; i < getAttributesCount(); i++) {
         if (!getAttributes(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -2713,7 +1374,7 @@ public final class Protocol0 {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -2746,12 +1407,12 @@ public final class Protocol0 {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2798,83 +1459,94 @@ public final class Protocol0 {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Event parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.spotify.ffwd.protocol0.Protocol0.Event prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code FFWD.Protocol0.Event}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.spotify.ffwd.protocol0.Protocol0.EventOrBuilder {
@@ -2882,21 +1554,18 @@ public final class Protocol0 {
           getDescriptor() {
         return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.spotify.ffwd.protocol0.Protocol0.Event.class, com.spotify.ffwd.protocol0.Protocol0.Event.Builder.class);
+        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_fieldAccessorTable;
       }
-
+      
       // Construct using com.spotify.ffwd.protocol0.Protocol0.Event.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2908,7 +1577,7 @@ public final class Protocol0 {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         time_ = 0L;
@@ -2935,20 +1604,20 @@ public final class Protocol0 {
         }
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Event_descriptor;
+        return com.spotify.ffwd.protocol0.Protocol0.Event.getDescriptor();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Event getDefaultInstanceForType() {
         return com.spotify.ffwd.protocol0.Protocol0.Event.getDefaultInstance();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Event build() {
         com.spotify.ffwd.protocol0.Protocol0.Event result = buildPartial();
         if (!result.isInitialized()) {
@@ -2956,7 +1625,17 @@ public final class Protocol0 {
         }
         return result;
       }
-
+      
+      private com.spotify.ffwd.protocol0.Protocol0.Event buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.spotify.ffwd.protocol0.Protocol0.Event result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public com.spotify.ffwd.protocol0.Protocol0.Event buildPartial() {
         com.spotify.ffwd.protocol0.Protocol0.Event result = new com.spotify.ffwd.protocol0.Protocol0.Event(this);
         int from_bitField0_ = bitField0_;
@@ -3008,7 +1687,7 @@ public final class Protocol0 {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.spotify.ffwd.protocol0.Protocol0.Event) {
           return mergeFrom((com.spotify.ffwd.protocol0.Protocol0.Event)other);
@@ -3017,34 +1696,26 @@ public final class Protocol0 {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(com.spotify.ffwd.protocol0.Protocol0.Event other) {
         if (other == com.spotify.ffwd.protocol0.Protocol0.Event.getDefaultInstance()) return this;
         if (other.hasTime()) {
           setTime(other.getTime());
         }
         if (other.hasKey()) {
-          bitField0_ |= 0x00000002;
-          key_ = other.key_;
-          onChanged();
+          setKey(other.getKey());
         }
         if (other.hasValue()) {
           setValue(other.getValue());
         }
         if (other.hasHost()) {
-          bitField0_ |= 0x00000008;
-          host_ = other.host_;
-          onChanged();
+          setHost(other.getHost());
         }
         if (other.hasState()) {
-          bitField0_ |= 0x00000010;
-          state_ = other.state_;
-          onChanged();
+          setState(other.getState());
         }
         if (other.hasDescription()) {
-          bitField0_ |= 0x00000020;
-          description_ = other.description_;
-          onChanged();
+          setDescription(other.getDescription());
         }
         if (other.hasTtl()) {
           setTtl(other.getTtl());
@@ -3088,7 +1759,7 @@ public final class Protocol0 {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         for (int i = 0; i < getAttributesCount(); i++) {
           if (!getAttributes(i).isInitialized()) {
@@ -3098,134 +1769,119 @@ public final class Protocol0 {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.spotify.ffwd.protocol0.Protocol0.Event parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.spotify.ffwd.protocol0.Protocol0.Event) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              time_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              key_ = input.readBytes();
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              value_ = input.readDouble();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              host_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              state_ = input.readBytes();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              description_ = input.readBytes();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              ttl_ = input.readInt64();
+              break;
+            }
+            case 66: {
+              ensureTagsIsMutable();
+              tags_.add(input.readBytes());
+              break;
+            }
+            case 74: {
+              com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder subBuilder = com.spotify.ffwd.protocol0.Protocol0.Attribute.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addAttributes(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // optional int64 time = 1;
       private long time_ ;
-      /**
-       * <code>optional int64 time = 1;</code>
-       *
-       * <pre>
-       * time in ms when the event was generated.
-       * </pre>
-       */
       public boolean hasTime() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>optional int64 time = 1;</code>
-       *
-       * <pre>
-       * time in ms when the event was generated.
-       * </pre>
-       */
       public long getTime() {
         return time_;
       }
-      /**
-       * <code>optional int64 time = 1;</code>
-       *
-       * <pre>
-       * time in ms when the event was generated.
-       * </pre>
-       */
       public Builder setTime(long value) {
         bitField0_ |= 0x00000001;
         time_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>optional int64 time = 1;</code>
-       *
-       * <pre>
-       * time in ms when the event was generated.
-       * </pre>
-       */
       public Builder clearTime() {
         bitField0_ = (bitField0_ & ~0x00000001);
         time_ = 0L;
         onChanged();
         return this;
       }
-
+      
       // optional string key = 2;
       private java.lang.Object key_ = "";
-      /**
-       * <code>optional string key = 2;</code>
-       *
-       * <pre>
-       * key of event.
-       * </pre>
-       */
       public boolean hasKey() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional string key = 2;</code>
-       *
-       * <pre>
-       * key of event.
-       * </pre>
-       */
-      public java.lang.String getKey() {
+      public String getKey() {
         java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string key = 2;</code>
-       *
-       * <pre>
-       * key of event.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string key = 2;</code>
-       *
-       * <pre>
-       * key of event.
-       * </pre>
-       */
-      public Builder setKey(
-          java.lang.String value) {
+      public Builder setKey(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3234,145 +1890,55 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string key = 2;</code>
-       *
-       * <pre>
-       * key of event.
-       * </pre>
-       */
       public Builder clearKey() {
         bitField0_ = (bitField0_ & ~0x00000002);
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string key = 2;</code>
-       *
-       * <pre>
-       * key of event.
-       * </pre>
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      void setKey(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
         key_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional double value = 3;
       private double value_ ;
-      /**
-       * <code>optional double value = 3;</code>
-       *
-       * <pre>
-       * value of event.
-       * </pre>
-       */
       public boolean hasValue() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>optional double value = 3;</code>
-       *
-       * <pre>
-       * value of event.
-       * </pre>
-       */
       public double getValue() {
         return value_;
       }
-      /**
-       * <code>optional double value = 3;</code>
-       *
-       * <pre>
-       * value of event.
-       * </pre>
-       */
       public Builder setValue(double value) {
         bitField0_ |= 0x00000004;
         value_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>optional double value = 3;</code>
-       *
-       * <pre>
-       * value of event.
-       * </pre>
-       */
       public Builder clearValue() {
         bitField0_ = (bitField0_ & ~0x00000004);
         value_ = 0D;
         onChanged();
         return this;
       }
-
+      
       // optional string host = 4;
       private java.lang.Object host_ = "";
-      /**
-       * <code>optional string host = 4;</code>
-       *
-       * <pre>
-       * host where event originated.
-       * </pre>
-       */
       public boolean hasHost() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
-      /**
-       * <code>optional string host = 4;</code>
-       *
-       * <pre>
-       * host where event originated.
-       * </pre>
-       */
-      public java.lang.String getHost() {
+      public String getHost() {
         java.lang.Object ref = host_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           host_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string host = 4;</code>
-       *
-       * <pre>
-       * host where event originated.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getHostBytes() {
-        java.lang.Object ref = host_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          host_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string host = 4;</code>
-       *
-       * <pre>
-       * host where event originated.
-       * </pre>
-       */
-      public Builder setHost(
-          java.lang.String value) {
+      public Builder setHost(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3381,96 +1947,34 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string host = 4;</code>
-       *
-       * <pre>
-       * host where event originated.
-       * </pre>
-       */
       public Builder clearHost() {
         bitField0_ = (bitField0_ & ~0x00000008);
         host_ = getDefaultInstance().getHost();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string host = 4;</code>
-       *
-       * <pre>
-       * host where event originated.
-       * </pre>
-       */
-      public Builder setHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+      void setHost(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000008;
         host_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional string state = 5;
       private java.lang.Object state_ = "";
-      /**
-       * <code>optional string state = 5;</code>
-       *
-       * <pre>
-       * indicated state of this event.
-       * </pre>
-       */
       public boolean hasState() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
-      /**
-       * <code>optional string state = 5;</code>
-       *
-       * <pre>
-       * indicated state of this event.
-       * </pre>
-       */
-      public java.lang.String getState() {
+      public String getState() {
         java.lang.Object ref = state_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           state_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string state = 5;</code>
-       *
-       * <pre>
-       * indicated state of this event.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getStateBytes() {
-        java.lang.Object ref = state_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          state_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string state = 5;</code>
-       *
-       * <pre>
-       * indicated state of this event.
-       * </pre>
-       */
-      public Builder setState(
-          java.lang.String value) {
+      public Builder setState(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3479,96 +1983,34 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string state = 5;</code>
-       *
-       * <pre>
-       * indicated state of this event.
-       * </pre>
-       */
       public Builder clearState() {
         bitField0_ = (bitField0_ & ~0x00000010);
         state_ = getDefaultInstance().getState();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string state = 5;</code>
-       *
-       * <pre>
-       * indicated state of this event.
-       * </pre>
-       */
-      public Builder setStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+      void setState(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
         state_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional string description = 6;
       private java.lang.Object description_ = "";
-      /**
-       * <code>optional string description = 6;</code>
-       *
-       * <pre>
-       * description of event.
-       * </pre>
-       */
       public boolean hasDescription() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
-      /**
-       * <code>optional string description = 6;</code>
-       *
-       * <pre>
-       * description of event.
-       * </pre>
-       */
-      public java.lang.String getDescription() {
+      public String getDescription() {
         java.lang.Object ref = description_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           description_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string description = 6;</code>
-       *
-       * <pre>
-       * description of event.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        java.lang.Object ref = description_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          description_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string description = 6;</code>
-       *
-       * <pre>
-       * description of event.
-       * </pre>
-       */
-      public Builder setDescription(
-          java.lang.String value) {
+      public Builder setDescription(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3577,86 +2019,39 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string description = 6;</code>
-       *
-       * <pre>
-       * description of event.
-       * </pre>
-       */
       public Builder clearDescription() {
         bitField0_ = (bitField0_ & ~0x00000020);
         description_ = getDefaultInstance().getDescription();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string description = 6;</code>
-       *
-       * <pre>
-       * description of event.
-       * </pre>
-       */
-      public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
+      void setDescription(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000020;
         description_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional int64 ttl = 7;
       private long ttl_ ;
-      /**
-       * <code>optional int64 ttl = 7;</code>
-       *
-       * <pre>
-       * time this event should be considered valid in seconds.
-       * </pre>
-       */
       public boolean hasTtl() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
-      /**
-       * <code>optional int64 ttl = 7;</code>
-       *
-       * <pre>
-       * time this event should be considered valid in seconds.
-       * </pre>
-       */
       public long getTtl() {
         return ttl_;
       }
-      /**
-       * <code>optional int64 ttl = 7;</code>
-       *
-       * <pre>
-       * time this event should be considered valid in seconds.
-       * </pre>
-       */
       public Builder setTtl(long value) {
         bitField0_ |= 0x00000040;
         ttl_ = value;
         onChanged();
         return this;
       }
-      /**
-       * <code>optional int64 ttl = 7;</code>
-       *
-       * <pre>
-       * time this event should be considered valid in seconds.
-       * </pre>
-       */
       public Builder clearTtl() {
         bitField0_ = (bitField0_ & ~0x00000040);
         ttl_ = 0L;
         onChanged();
         return this;
       }
-
+      
       // repeated string tags = 8;
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
@@ -3665,57 +2060,18 @@ public final class Protocol0 {
           bitField0_ |= 0x00000080;
          }
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
-      public java.util.List<java.lang.String>
+      public java.util.List<String>
           getTagsList() {
         return java.util.Collections.unmodifiableList(tags_);
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
       public int getTagsCount() {
         return tags_.size();
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
-      public java.lang.String getTags(int index) {
+      public String getTags(int index) {
         return tags_.get(index);
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
       public Builder setTags(
-          int index, java.lang.String value) {
+          int index, String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3724,15 +2080,7 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
-      public Builder addTags(
-          java.lang.String value) {
+      public Builder addTags(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3741,51 +2089,25 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
       public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
+          java.lang.Iterable<String> values) {
         ensureTagsIsMutable();
         super.addAll(values, tags_);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
-      /**
-       * <code>repeated string tags = 8;</code>
-       *
-       * <pre>
-       * tags associated to event.
-       * </pre>
-       */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+      void addTags(com.google.protobuf.ByteString value) {
+        ensureTagsIsMutable();
         tags_.add(value);
         onChanged();
-        return this;
       }
-
+      
       // repeated .FFWD.Protocol0.Attribute attributes = 9;
       private java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> attributes_ =
         java.util.Collections.emptyList();
@@ -3795,17 +2117,10 @@ public final class Protocol0 {
           bitField0_ |= 0x00000100;
          }
       }
-
+      
       private com.google.protobuf.RepeatedFieldBuilder<
           com.spotify.ffwd.protocol0.Protocol0.Attribute, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder, com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> attributesBuilder_;
-
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
+      
       public java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute> getAttributesList() {
         if (attributesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(attributes_);
@@ -3813,13 +2128,6 @@ public final class Protocol0 {
           return attributesBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public int getAttributesCount() {
         if (attributesBuilder_ == null) {
           return attributes_.size();
@@ -3827,13 +2135,6 @@ public final class Protocol0 {
           return attributesBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute getAttributes(int index) {
         if (attributesBuilder_ == null) {
           return attributes_.get(index);
@@ -3841,13 +2142,6 @@ public final class Protocol0 {
           return attributesBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder setAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute value) {
         if (attributesBuilder_ == null) {
@@ -3862,13 +2156,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder setAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder builderForValue) {
         if (attributesBuilder_ == null) {
@@ -3880,13 +2167,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder addAttributes(com.spotify.ffwd.protocol0.Protocol0.Attribute value) {
         if (attributesBuilder_ == null) {
           if (value == null) {
@@ -3900,13 +2180,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder addAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute value) {
         if (attributesBuilder_ == null) {
@@ -3921,13 +2194,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder addAttributes(
           com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder builderForValue) {
         if (attributesBuilder_ == null) {
@@ -3939,13 +2205,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder addAttributes(
           int index, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder builderForValue) {
         if (attributesBuilder_ == null) {
@@ -3957,13 +2216,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder addAllAttributes(
           java.lang.Iterable<? extends com.spotify.ffwd.protocol0.Protocol0.Attribute> values) {
         if (attributesBuilder_ == null) {
@@ -3975,13 +2227,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder clearAttributes() {
         if (attributesBuilder_ == null) {
           attributes_ = java.util.Collections.emptyList();
@@ -3992,13 +2237,6 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public Builder removeAttributes(int index) {
         if (attributesBuilder_ == null) {
           ensureAttributesIsMutable();
@@ -4009,24 +2247,10 @@ public final class Protocol0 {
         }
         return this;
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder getAttributesBuilder(
           int index) {
         return getAttributesFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder getAttributesOrBuilder(
           int index) {
         if (attributesBuilder_ == null) {
@@ -4034,13 +2258,6 @@ public final class Protocol0 {
           return attributesBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public java.util.List<? extends com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder> 
            getAttributesOrBuilderList() {
         if (attributesBuilder_ != null) {
@@ -4049,36 +2266,15 @@ public final class Protocol0 {
           return java.util.Collections.unmodifiableList(attributes_);
         }
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder addAttributesBuilder() {
         return getAttributesFieldBuilder().addBuilder(
             com.spotify.ffwd.protocol0.Protocol0.Attribute.getDefaultInstance());
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder addAttributesBuilder(
           int index) {
         return getAttributesFieldBuilder().addBuilder(
             index, com.spotify.ffwd.protocol0.Protocol0.Attribute.getDefaultInstance());
       }
-      /**
-       * <code>repeated .FFWD.Protocol0.Attribute attributes = 9;</code>
-       *
-       * <pre>
-       * attributes associated to event.
-       * </pre>
-       */
       public java.util.List<com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder> 
            getAttributesBuilderList() {
         return getAttributesFieldBuilder().getBuilderList();
@@ -4097,238 +2293,122 @@ public final class Protocol0 {
         }
         return attributesBuilder_;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:FFWD.Protocol0.Event)
     }
-
+    
     static {
       defaultInstance = new Event(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:FFWD.Protocol0.Event)
   }
-
+  
   public interface AttributeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
+    
     // required string key = 1;
-    /**
-     * <code>required string key = 1;</code>
-     */
     boolean hasKey();
-    /**
-     * <code>required string key = 1;</code>
-     */
-    java.lang.String getKey();
-    /**
-     * <code>required string key = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
+    String getKey();
+    
     // optional string value = 2;
-    /**
-     * <code>optional string value = 2;</code>
-     */
     boolean hasValue();
-    /**
-     * <code>optional string value = 2;</code>
-     */
-    java.lang.String getValue();
-    /**
-     * <code>optional string value = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getValueBytes();
+    String getValue();
   }
-  /**
-   * Protobuf type {@code FFWD.Protocol0.Attribute}
-   */
   public static final class Attribute extends
       com.google.protobuf.GeneratedMessage
       implements AttributeOrBuilder {
     // Use Attribute.newBuilder() to construct.
-    private Attribute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private Attribute(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private Attribute(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
+    private Attribute(boolean noInit) {}
+    
     private static final Attribute defaultInstance;
     public static Attribute getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Attribute getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Attribute(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              key_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              value_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.spotify.ffwd.protocol0.Protocol0.Attribute.class, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder.class);
+      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<Attribute> PARSER =
-        new com.google.protobuf.AbstractParser<Attribute>() {
-      public Attribute parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Attribute(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Attribute> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // required string key = 1;
     public static final int KEY_FIELD_NUMBER = 1;
     private java.lang.Object key_;
-    /**
-     * <code>required string key = 1;</code>
-     */
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required string key = 1;</code>
-     */
-    public java.lang.String getKey() {
+    public String getKey() {
       java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           key_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>required string key = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
+    private com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         key_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional string value = 2;
     public static final int VALUE_FIELD_NUMBER = 2;
     private java.lang.Object value_;
-    /**
-     * <code>optional string value = 2;</code>
-     */
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional string value = 2;</code>
-     */
-    public java.lang.String getValue() {
+    public String getValue() {
       java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           value_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string value = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getValueBytes() {
+    private com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         value_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     private void initFields() {
       key_ = "";
       value_ = "";
@@ -4337,7 +2417,7 @@ public final class Protocol0 {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasKey()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4345,7 +2425,7 @@ public final class Protocol0 {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -4357,12 +2437,12 @@ public final class Protocol0 {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4376,83 +2456,94 @@ public final class Protocol0 {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Attribute parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.spotify.ffwd.protocol0.Protocol0.Attribute prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code FFWD.Protocol0.Attribute}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.spotify.ffwd.protocol0.Protocol0.AttributeOrBuilder {
@@ -4460,21 +2551,18 @@ public final class Protocol0 {
           getDescriptor() {
         return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.spotify.ffwd.protocol0.Protocol0.Attribute.class, com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder.class);
+        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_fieldAccessorTable;
       }
-
+      
       // Construct using com.spotify.ffwd.protocol0.Protocol0.Attribute.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4485,7 +2573,7 @@ public final class Protocol0 {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         key_ = "";
@@ -4494,20 +2582,20 @@ public final class Protocol0 {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Attribute_descriptor;
+        return com.spotify.ffwd.protocol0.Protocol0.Attribute.getDescriptor();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Attribute getDefaultInstanceForType() {
         return com.spotify.ffwd.protocol0.Protocol0.Attribute.getDefaultInstance();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Attribute build() {
         com.spotify.ffwd.protocol0.Protocol0.Attribute result = buildPartial();
         if (!result.isInitialized()) {
@@ -4515,7 +2603,17 @@ public final class Protocol0 {
         }
         return result;
       }
-
+      
+      private com.spotify.ffwd.protocol0.Protocol0.Attribute buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.spotify.ffwd.protocol0.Protocol0.Attribute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public com.spotify.ffwd.protocol0.Protocol0.Attribute buildPartial() {
         com.spotify.ffwd.protocol0.Protocol0.Attribute result = new com.spotify.ffwd.protocol0.Protocol0.Attribute(this);
         int from_bitField0_ = bitField0_;
@@ -4532,7 +2630,7 @@ public final class Protocol0 {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.spotify.ffwd.protocol0.Protocol0.Attribute) {
           return mergeFrom((com.spotify.ffwd.protocol0.Protocol0.Attribute)other);
@@ -4541,23 +2639,19 @@ public final class Protocol0 {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(com.spotify.ffwd.protocol0.Protocol0.Attribute other) {
         if (other == com.spotify.ffwd.protocol0.Protocol0.Attribute.getDefaultInstance()) return this;
         if (other.hasKey()) {
-          bitField0_ |= 0x00000001;
-          key_ = other.key_;
-          onChanged();
+          setKey(other.getKey());
         }
         if (other.hasValue()) {
-          bitField0_ |= 0x00000002;
-          value_ = other.value_;
-          onChanged();
+          setValue(other.getValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasKey()) {
           
@@ -4565,69 +2659,62 @@ public final class Protocol0 {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.spotify.ffwd.protocol0.Protocol0.Attribute parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.spotify.ffwd.protocol0.Protocol0.Attribute) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              value_ = input.readBytes();
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required string key = 1;
       private java.lang.Object key_ = "";
-      /**
-       * <code>required string key = 1;</code>
-       */
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public java.lang.String getKey() {
+      public String getKey() {
         java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           key_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public Builder setKey(
-          java.lang.String value) {
+      public Builder setKey(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4636,72 +2723,34 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>required string key = 1;</code>
-       */
       public Builder clearKey() {
         bitField0_ = (bitField0_ & ~0x00000001);
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      void setKey(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
         key_ = value;
         onChanged();
-        return this;
       }
-
+      
       // optional string value = 2;
       private java.lang.Object value_ = "";
-      /**
-       * <code>optional string value = 2;</code>
-       */
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional string value = 2;</code>
-       */
-      public java.lang.String getValue() {
+      public String getValue() {
         java.lang.Object ref = value_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           value_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string value = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          value_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string value = 2;</code>
-       */
-      public Builder setValue(
-          java.lang.String value) {
+      public Builder setValue(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4710,232 +2759,97 @@ public final class Protocol0 {
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string value = 2;</code>
-       */
       public Builder clearValue() {
         bitField0_ = (bitField0_ & ~0x00000002);
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
-      /**
-       * <code>optional string value = 2;</code>
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      void setValue(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
         value_ = value;
         onChanged();
-        return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:FFWD.Protocol0.Attribute)
     }
-
+    
     static {
       defaultInstance = new Attribute(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:FFWD.Protocol0.Attribute)
   }
-
+  
   public interface MessageOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
+    
     // optional .FFWD.Protocol0.Metric metric = 1;
-    /**
-     * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-     */
     boolean hasMetric();
-    /**
-     * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-     */
     com.spotify.ffwd.protocol0.Protocol0.Metric getMetric();
-    /**
-     * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-     */
     com.spotify.ffwd.protocol0.Protocol0.MetricOrBuilder getMetricOrBuilder();
-
+    
     // optional .FFWD.Protocol0.Event event = 2;
-    /**
-     * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-     */
     boolean hasEvent();
-    /**
-     * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-     */
     com.spotify.ffwd.protocol0.Protocol0.Event getEvent();
-    /**
-     * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-     */
     com.spotify.ffwd.protocol0.Protocol0.EventOrBuilder getEventOrBuilder();
   }
-  /**
-   * Protobuf type {@code FFWD.Protocol0.Message}
-   */
   public static final class Message extends
       com.google.protobuf.GeneratedMessage
       implements MessageOrBuilder {
     // Use Message.newBuilder() to construct.
-    private Message(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private Message(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private Message(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
+    private Message(boolean noInit) {}
+    
     private static final Message defaultInstance;
     public static Message getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Message getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Message(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.spotify.ffwd.protocol0.Protocol0.Metric.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                subBuilder = metric_.toBuilder();
-              }
-              metric_ = input.readMessage(com.spotify.ffwd.protocol0.Protocol0.Metric.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metric_);
-                metric_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 18: {
-              com.spotify.ffwd.protocol0.Protocol0.Event.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = event_.toBuilder();
-              }
-              event_ = input.readMessage(com.spotify.ffwd.protocol0.Protocol0.Event.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(event_);
-                event_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.spotify.ffwd.protocol0.Protocol0.Message.class, com.spotify.ffwd.protocol0.Protocol0.Message.Builder.class);
+      return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<Message> PARSER =
-        new com.google.protobuf.AbstractParser<Message>() {
-      public Message parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Message(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Message> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // optional .FFWD.Protocol0.Metric metric = 1;
     public static final int METRIC_FIELD_NUMBER = 1;
     private com.spotify.ffwd.protocol0.Protocol0.Metric metric_;
-    /**
-     * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-     */
     public boolean hasMetric() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.Metric getMetric() {
       return metric_;
     }
-    /**
-     * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.MetricOrBuilder getMetricOrBuilder() {
       return metric_;
     }
-
+    
     // optional .FFWD.Protocol0.Event event = 2;
     public static final int EVENT_FIELD_NUMBER = 2;
     private com.spotify.ffwd.protocol0.Protocol0.Event event_;
-    /**
-     * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-     */
     public boolean hasEvent() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.Event getEvent() {
       return event_;
     }
-    /**
-     * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-     */
     public com.spotify.ffwd.protocol0.Protocol0.EventOrBuilder getEventOrBuilder() {
       return event_;
     }
-
+    
     private void initFields() {
       metric_ = com.spotify.ffwd.protocol0.Protocol0.Metric.getDefaultInstance();
       event_ = com.spotify.ffwd.protocol0.Protocol0.Event.getDefaultInstance();
@@ -4944,7 +2858,7 @@ public final class Protocol0 {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (hasMetric()) {
         if (!getMetric().isInitialized()) {
           memoizedIsInitialized = 0;
@@ -4960,7 +2874,7 @@ public final class Protocol0 {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -4972,12 +2886,12 @@ public final class Protocol0 {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4991,83 +2905,94 @@ public final class Protocol0 {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static com.spotify.ffwd.protocol0.Protocol0.Message parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.spotify.ffwd.protocol0.Protocol0.Message prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code FFWD.Protocol0.Message}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.spotify.ffwd.protocol0.Protocol0.MessageOrBuilder {
@@ -5075,21 +3000,18 @@ public final class Protocol0 {
           getDescriptor() {
         return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.spotify.ffwd.protocol0.Protocol0.Message.class, com.spotify.ffwd.protocol0.Protocol0.Message.Builder.class);
+        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_fieldAccessorTable;
       }
-
+      
       // Construct using com.spotify.ffwd.protocol0.Protocol0.Message.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5102,7 +3024,7 @@ public final class Protocol0 {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         if (metricBuilder_ == null) {
@@ -5119,20 +3041,20 @@ public final class Protocol0 {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.spotify.ffwd.protocol0.Protocol0.internal_static_FFWD_Protocol0_Message_descriptor;
+        return com.spotify.ffwd.protocol0.Protocol0.Message.getDescriptor();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Message getDefaultInstanceForType() {
         return com.spotify.ffwd.protocol0.Protocol0.Message.getDefaultInstance();
       }
-
+      
       public com.spotify.ffwd.protocol0.Protocol0.Message build() {
         com.spotify.ffwd.protocol0.Protocol0.Message result = buildPartial();
         if (!result.isInitialized()) {
@@ -5140,7 +3062,17 @@ public final class Protocol0 {
         }
         return result;
       }
-
+      
+      private com.spotify.ffwd.protocol0.Protocol0.Message buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.spotify.ffwd.protocol0.Protocol0.Message result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public com.spotify.ffwd.protocol0.Protocol0.Message buildPartial() {
         com.spotify.ffwd.protocol0.Protocol0.Message result = new com.spotify.ffwd.protocol0.Protocol0.Message(this);
         int from_bitField0_ = bitField0_;
@@ -5165,7 +3097,7 @@ public final class Protocol0 {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.spotify.ffwd.protocol0.Protocol0.Message) {
           return mergeFrom((com.spotify.ffwd.protocol0.Protocol0.Message)other);
@@ -5174,7 +3106,7 @@ public final class Protocol0 {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(com.spotify.ffwd.protocol0.Protocol0.Message other) {
         if (other == com.spotify.ffwd.protocol0.Protocol0.Message.getDefaultInstance()) return this;
         if (other.hasMetric()) {
@@ -5186,7 +3118,7 @@ public final class Protocol0 {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (hasMetric()) {
           if (!getMetric().isInitialized()) {
@@ -5202,39 +3134,61 @@ public final class Protocol0 {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.spotify.ffwd.protocol0.Protocol0.Message parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.spotify.ffwd.protocol0.Protocol0.Message) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.spotify.ffwd.protocol0.Protocol0.Metric.Builder subBuilder = com.spotify.ffwd.protocol0.Protocol0.Metric.newBuilder();
+              if (hasMetric()) {
+                subBuilder.mergeFrom(getMetric());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setMetric(subBuilder.buildPartial());
+              break;
+            }
+            case 18: {
+              com.spotify.ffwd.protocol0.Protocol0.Event.Builder subBuilder = com.spotify.ffwd.protocol0.Protocol0.Event.newBuilder();
+              if (hasEvent()) {
+                subBuilder.mergeFrom(getEvent());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setEvent(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // optional .FFWD.Protocol0.Metric metric = 1;
       private com.spotify.ffwd.protocol0.Protocol0.Metric metric_ = com.spotify.ffwd.protocol0.Protocol0.Metric.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.spotify.ffwd.protocol0.Protocol0.Metric, com.spotify.ffwd.protocol0.Protocol0.Metric.Builder, com.spotify.ffwd.protocol0.Protocol0.MetricOrBuilder> metricBuilder_;
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public boolean hasMetric() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Metric getMetric() {
         if (metricBuilder_ == null) {
           return metric_;
@@ -5242,9 +3196,6 @@ public final class Protocol0 {
           return metricBuilder_.getMessage();
         }
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public Builder setMetric(com.spotify.ffwd.protocol0.Protocol0.Metric value) {
         if (metricBuilder_ == null) {
           if (value == null) {
@@ -5258,9 +3209,6 @@ public final class Protocol0 {
         bitField0_ |= 0x00000001;
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public Builder setMetric(
           com.spotify.ffwd.protocol0.Protocol0.Metric.Builder builderForValue) {
         if (metricBuilder_ == null) {
@@ -5272,9 +3220,6 @@ public final class Protocol0 {
         bitField0_ |= 0x00000001;
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public Builder mergeMetric(com.spotify.ffwd.protocol0.Protocol0.Metric value) {
         if (metricBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
@@ -5291,9 +3236,6 @@ public final class Protocol0 {
         bitField0_ |= 0x00000001;
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public Builder clearMetric() {
         if (metricBuilder_ == null) {
           metric_ = com.spotify.ffwd.protocol0.Protocol0.Metric.getDefaultInstance();
@@ -5304,17 +3246,11 @@ public final class Protocol0 {
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Metric.Builder getMetricBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getMetricFieldBuilder().getBuilder();
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.MetricOrBuilder getMetricOrBuilder() {
         if (metricBuilder_ != null) {
           return metricBuilder_.getMessageOrBuilder();
@@ -5322,9 +3258,6 @@ public final class Protocol0 {
           return metric_;
         }
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Metric metric = 1;</code>
-       */
       private com.google.protobuf.SingleFieldBuilder<
           com.spotify.ffwd.protocol0.Protocol0.Metric, com.spotify.ffwd.protocol0.Protocol0.Metric.Builder, com.spotify.ffwd.protocol0.Protocol0.MetricOrBuilder> 
           getMetricFieldBuilder() {
@@ -5338,20 +3271,14 @@ public final class Protocol0 {
         }
         return metricBuilder_;
       }
-
+      
       // optional .FFWD.Protocol0.Event event = 2;
       private com.spotify.ffwd.protocol0.Protocol0.Event event_ = com.spotify.ffwd.protocol0.Protocol0.Event.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.spotify.ffwd.protocol0.Protocol0.Event, com.spotify.ffwd.protocol0.Protocol0.Event.Builder, com.spotify.ffwd.protocol0.Protocol0.EventOrBuilder> eventBuilder_;
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public boolean hasEvent() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Event getEvent() {
         if (eventBuilder_ == null) {
           return event_;
@@ -5359,9 +3286,6 @@ public final class Protocol0 {
           return eventBuilder_.getMessage();
         }
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public Builder setEvent(com.spotify.ffwd.protocol0.Protocol0.Event value) {
         if (eventBuilder_ == null) {
           if (value == null) {
@@ -5375,9 +3299,6 @@ public final class Protocol0 {
         bitField0_ |= 0x00000002;
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public Builder setEvent(
           com.spotify.ffwd.protocol0.Protocol0.Event.Builder builderForValue) {
         if (eventBuilder_ == null) {
@@ -5389,9 +3310,6 @@ public final class Protocol0 {
         bitField0_ |= 0x00000002;
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public Builder mergeEvent(com.spotify.ffwd.protocol0.Protocol0.Event value) {
         if (eventBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
@@ -5408,9 +3326,6 @@ public final class Protocol0 {
         bitField0_ |= 0x00000002;
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public Builder clearEvent() {
         if (eventBuilder_ == null) {
           event_ = com.spotify.ffwd.protocol0.Protocol0.Event.getDefaultInstance();
@@ -5421,17 +3336,11 @@ public final class Protocol0 {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.Event.Builder getEventBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getEventFieldBuilder().getBuilder();
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       public com.spotify.ffwd.protocol0.Protocol0.EventOrBuilder getEventOrBuilder() {
         if (eventBuilder_ != null) {
           return eventBuilder_.getMessageOrBuilder();
@@ -5439,9 +3348,6 @@ public final class Protocol0 {
           return event_;
         }
       }
-      /**
-       * <code>optional .FFWD.Protocol0.Event event = 2;</code>
-       */
       private com.google.protobuf.SingleFieldBuilder<
           com.spotify.ffwd.protocol0.Protocol0.Event, com.spotify.ffwd.protocol0.Protocol0.Event.Builder, com.spotify.ffwd.protocol0.Protocol0.EventOrBuilder> 
           getEventFieldBuilder() {
@@ -5455,18 +3361,18 @@ public final class Protocol0 {
         }
         return eventBuilder_;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:FFWD.Protocol0.Message)
     }
-
+    
     static {
       defaultInstance = new Message(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:FFWD.Protocol0.Message)
   }
-
+  
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_FFWD_Protocol0_Metric_descriptor;
   private static
@@ -5487,7 +3393,7 @@ public final class Protocol0 {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_FFWD_Protocol0_Message_fieldAccessorTable;
-
+  
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -5520,25 +3426,33 @@ public final class Protocol0 {
           internal_static_FFWD_Protocol0_Metric_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FFWD_Protocol0_Metric_descriptor,
-              new java.lang.String[] { "Proc", "Time", "Key", "Value", "Host", "Tags", "Attributes", });
+              new java.lang.String[] { "Proc", "Time", "Key", "Value", "Host", "Tags", "Attributes", },
+              com.spotify.ffwd.protocol0.Protocol0.Metric.class,
+              com.spotify.ffwd.protocol0.Protocol0.Metric.Builder.class);
           internal_static_FFWD_Protocol0_Event_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_FFWD_Protocol0_Event_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FFWD_Protocol0_Event_descriptor,
-              new java.lang.String[] { "Time", "Key", "Value", "Host", "State", "Description", "Ttl", "Tags", "Attributes", });
+              new java.lang.String[] { "Time", "Key", "Value", "Host", "State", "Description", "Ttl", "Tags", "Attributes", },
+              com.spotify.ffwd.protocol0.Protocol0.Event.class,
+              com.spotify.ffwd.protocol0.Protocol0.Event.Builder.class);
           internal_static_FFWD_Protocol0_Attribute_descriptor =
             getDescriptor().getMessageTypes().get(2);
           internal_static_FFWD_Protocol0_Attribute_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FFWD_Protocol0_Attribute_descriptor,
-              new java.lang.String[] { "Key", "Value", });
+              new java.lang.String[] { "Key", "Value", },
+              com.spotify.ffwd.protocol0.Protocol0.Attribute.class,
+              com.spotify.ffwd.protocol0.Protocol0.Attribute.Builder.class);
           internal_static_FFWD_Protocol0_Message_descriptor =
             getDescriptor().getMessageTypes().get(3);
           internal_static_FFWD_Protocol0_Message_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FFWD_Protocol0_Message_descriptor,
-              new java.lang.String[] { "Metric", "Event", });
+              new java.lang.String[] { "Metric", "Event", },
+              com.spotify.ffwd.protocol0.Protocol0.Message.class,
+              com.spotify.ffwd.protocol0.Protocol0.Message.Builder.class);
           return null;
         }
       };
@@ -5547,6 +3461,6 @@ public final class Protocol0 {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
   }
-
+  
   // @@protoc_insertion_point(outer_class_scope)
 }

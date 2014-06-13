@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import com.spotify.ffwd.protocol0.Protocol0;
+import com.spotify.ffwd.protocol0.Protocol0.Attribute;
 
 @RequiredArgsConstructor
 @EqualsAndHashCode(of = { "has", "time", "key", "value", "host", "state",
@@ -161,9 +162,15 @@ public class Event {
 
         if (test(ATTRIBUTES)) {
             for (final Map.Entry<String, String> entry : attributes.entrySet()) {
-                builder.addAttributes(Protocol0.Attribute.newBuilder()
-                        .setKey(entry.getKey()).setValue(entry.getValue())
-                        .build());
+                if (entry.getKey() == null)
+                    continue;
+
+                final Attribute.Builder attributeBuilder = Protocol0.Attribute.newBuilder().setKey(entry.getKey());
+
+                if (entry.getValue() != null)
+                    attributeBuilder.setValue(entry.getValue());
+
+                builder.addAttributes(attributeBuilder.build());
             }
         }
 
