@@ -9,10 +9,10 @@ A java client for the native protobuf protocol of
 
 ```java
 public class Foo {
-    private static final FastForward ffwd = new FastForward();
+    private static final FastForward ffwd = FastForward.setup();
     private static final Metric metric = FastForward.metric("foo.metric").attribute("class", Foo.class.getCanonicalName());
 
-    public void run() {
+    public void run() throws IOException {
         ffwd.send(metric.value(42));
     }
 }

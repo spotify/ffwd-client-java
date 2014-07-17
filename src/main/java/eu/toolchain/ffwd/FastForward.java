@@ -14,61 +14,53 @@ public class FastForward {
     public static final String DEFAULT_HOST = "localhost";
     public static final int DEFAULT_PORT = 19091;
 
+
+    public static FastForward setup() throws UnknownHostException, SocketException {
+        return setup(InetAddress.getByName(DEFAULT_HOST), DEFAULT_PORT);
+    }
+
+    public static FastForward setup(String host) throws UnknownHostException, SocketException {
+        return setup(InetAddress.getByName(host));
+    }
+
+    public static FastForward setup(String host, int port) throws UnknownHostException, SocketException {
+        return setup(InetAddress.getByName(host), port);
+    }
+
+    public static FastForward setup(InetAddress addr) throws SocketException {
+        return setup(addr, DEFAULT_PORT);
+    }
+
+    /**
+     * Initialization method for a FastForward client.
+     *
+     * @return A new instance of a FastForward client.
+     * @throws SocketException If a datagram socket cannot be created.
+     */
+    public static FastForward setup(InetAddress addr, int port) throws SocketException {
+        final DatagramSocket socket = new DatagramSocket();
+        return new FastForward(addr, port, socket);
+    }
+
     private final InetAddress addr;
     private final int port;
     private final DatagramSocket socket;
 
-    public FastForward() {
-        this.addr = setupAddress(DEFAULT_HOST);
-        this.port = DEFAULT_PORT;
-        this.socket = setupSocket();
-    }
-
-    public FastForward(String host) {
-        this.addr = setupAddress(host);
-        this.port = DEFAULT_PORT;
-        this.socket = setupSocket();
-    }
-
-    public FastForward(String host, int port) {
-        this.addr = setupAddress(host);
+    private FastForward(InetAddress addr, int port, DatagramSocket socket) {
+        this.addr = addr;
         this.port = port;
-        this.socket = setupSocket();
+        this.socket = socket;
     }
 
-    private InetAddress setupAddress(String host) {
-        try {
-            return InetAddress.getByName(host);
-        } catch (UnknownHostException e) {
-            e.printStackTrace(System.err);
-            return null;
-        }
-    }
-
-    private DatagramSocket setupSocket() {
-        try {
-            return new DatagramSocket();
-        } catch (SocketException e) {
-            e.printStackTrace(System.err);
-            return null;
-        }
-    }
-
-    public void send(Metric metric) {
-        if (socket == null || addr == null)
-            return;
-
+    public void send(Metric metric) throws IOException {
         sendFrame(metric.serialize());
     }
 
-    public void send(Event event) {
-        if (socket == null || addr == null)
-            return;
-
+    public void send(Event event) throws IOException {
         sendFrame(event.serialize());
     }
 
-    private void sendFrame(byte[] bytes) {
+    private void sendFrame(byte[] bytes) throws IOException {
         final ByteBuffer buffer = ByteBuffer.allocate(bytes.length + 8);
         buffer.order(ByteOrder.BIG_ENDIAN);
 
@@ -83,12 +75,7 @@ public class FastForward {
         final DatagramPacket packet = new DatagramPacket(send, send.length,
                 addr, port);
 
-        try {
-            socket.send(packet);
-        } catch (IOException e) {
-            e.printStackTrace(System.err);
-            return;
-        }
+        socket.send(packet);
     }
 
     public static Metric metric(String key) {
