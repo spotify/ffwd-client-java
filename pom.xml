@@ -3,7 +3,7 @@
 
   <groupId>eu.toolchain.ffwd</groupId>
   <artifactId>ffwd-client</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.3</version>
   <packaging>jar</packaging>
   <name>FastForward Client</name>
   <description>FastForward client for Java.</description>
