@@ -58,7 +58,43 @@
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
+          <outputDirectory>${project.build.outputDirectory}/default</outputDirectory>
         </configuration>
+        <executions>
+          <execution>
+            <id>jdk6</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <source>1.6</source>
+              <target>1.6</target>
+              <classifier>jdk6</classifier>
+              <outputDirectory>${project.build.outputDirectory}/jdk6</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <classesDirectory>${project.build.outputDirectory}/default</classesDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <id>jdk6</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <classesDirectory>${project.build.outputDirectory}/jdk6</classesDirectory>
+              <classifier>jdk6</classifier>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
