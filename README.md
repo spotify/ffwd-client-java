@@ -29,3 +29,10 @@ ffwd-java-client is built and distributed through maven.
 2. Hack.
 3. Push the branch back to GitHub.
 4. Send a pull request to our upstream repo.
+
+## Releasing
+
+```sh
+#> mvn versions:set -DnewVersion=<version>
+#> mvn clean deploy -P release
+```
