@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package FFWD.Protocol0;
+syntax = "proto2";
 
+package FFWD.Protocol0;
 option java_package = "com.spotify.ffwd.protocol0";
 
 message Metric {

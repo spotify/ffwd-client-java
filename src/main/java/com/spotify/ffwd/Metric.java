@@ -16,17 +16,15 @@
 
 package com.spotify.ffwd;
 
+import com.spotify.ffwd.protocol0.Protocol0;
+import com.spotify.ffwd.protocol0.Protocol0.Attribute;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-
-import com.spotify.ffwd.protocol0.Protocol0;
-import com.spotify.ffwd.protocol0.Protocol0.Attribute;
 
 @RequiredArgsConstructor
 @EqualsAndHashCode(of = { "has", "proc", "time", "key", "value", "host",

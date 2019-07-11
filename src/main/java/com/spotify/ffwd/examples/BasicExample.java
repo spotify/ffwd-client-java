@@ -16,10 +16,9 @@
 
 package com.spotify.ffwd.examples;
 
-import java.io.IOException;
-
 import com.spotify.ffwd.Event;
 import com.spotify.ffwd.FastForward;
+import java.io.IOException;
 
 public class BasicExample {
     public static void main(String[] args) throws IOException {
