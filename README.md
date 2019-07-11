@@ -1,9 +1,8 @@
-# A java client to FastForward &#187;
+# A java client to FastForward
 
-[![Build Status](https://travis-ci.org/udoprog/ffwd-java-client.svg?branch=master)](https://travis-ci.org/udoprog/ffwd-java-client)
+[![Build Status](https://travis-ci.org/spotify/ffwd-java-client.svg?branch=master)](https://travis-ci.org/spotify/ffwd-java-client)
 
-A java client for the native protobuf protocol of
-[ffwd](https://github.com/spotify/ffwd).
+A java client for the native protobuf protocol of [ffwd](https://github.com/spotify/ffwd).
 
 ## Usage
 
@@ -24,8 +23,7 @@ ffwd-java-client is built and distributed through maven.
 
 ## Contributing
 
-1. Fork ffwd-java-client from
-   [github](https://github.com/udoprog/ffwd-java-client) and clone your fork.
+1. Fork ffwd-java-client from [GitHub](https://github.com/spotify/ffwd-java-client) and clone your fork.
 2. Hack.
 3. Push the branch back to GitHub.
 4. Send a pull request to our upstream repo.
