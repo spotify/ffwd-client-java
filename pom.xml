@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>eu.toolchain.ffwd</groupId>
+  <groupId>com.spotify.ffwd</groupId>
   <artifactId>ffwd-client</artifactId>
   <version>0.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>FastForward Client</name>
   <description>FastForward client for Java.</description>
-  <url>https://github.com/udoprog/ffwd-client-java</url>
+  <url>https://github.com/spotify/ffwd-client-java</url>
 
   <licenses>
     <license>
@@ -17,18 +17,10 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:udoprog/ffwd-client-java</connection>
-    <developerConnection>scm:git:git@github.com:udoprog/ffwd-client-java</developerConnection>
-    <url>https://github.com/udoprog/ffwd-client-java</url>
+    <connection>scm:git:git@github.com:spotify/ffwd-client-java</connection>
+    <developerConnection>scm:git:git@github.com:spotify/ffwd-client-java</developerConnection>
+    <url>https://github.com/spotify/ffwd-client-java</url>
   </scm>
-
-  <developers>
-    <developer>
-      <id>udoprog</id>
-      <name>John-John Tedro</name>
-      <email>johnjohn.tedro@gmail.com</email>
-    </developer>
-  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

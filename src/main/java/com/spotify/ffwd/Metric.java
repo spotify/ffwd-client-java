@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package eu.toolchain.ffwd;
+package com.spotify.ffwd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +27,6 @@ import lombok.RequiredArgsConstructor;
 
 import com.spotify.ffwd.protocol0.Protocol0;
 import com.spotify.ffwd.protocol0.Protocol0.Attribute;
-import com.spotify.ffwd.protocol0.Protocol0.Metric.Builder;
 
 @RequiredArgsConstructor
 @EqualsAndHashCode(of = { "has", "proc", "time", "key", "value", "host",

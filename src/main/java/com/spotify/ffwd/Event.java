@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package eu.toolchain.ffwd;
+package com.spotify.ffwd;
 
 import java.util.ArrayList;
 import java.util.HashMap;

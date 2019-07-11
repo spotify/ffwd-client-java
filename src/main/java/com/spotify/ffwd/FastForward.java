@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package eu.toolchain.ffwd;
+package com.spotify.ffwd;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

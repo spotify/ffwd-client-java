@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package eu.toolchain.ffwd.examples;
+package com.spotify.ffwd.examples;
 
 import java.io.IOException;
 
-import eu.toolchain.ffwd.Event;
-import eu.toolchain.ffwd.FastForward;
+import com.spotify.ffwd.Event;
+import com.spotify.ffwd.FastForward;
 
 public class BasicExample {
     public static void main(String[] args) throws IOException {
