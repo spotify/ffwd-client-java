@@ -23,10 +23,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 
@@ -108,9 +105,12 @@ public class FastForwardPerf {
         return attributes;
     }
 
-    @RequiredArgsConstructor
     private final class BatchRunnable implements Runnable {
         private final Batch batch;
+
+        public BatchRunnable(Batch batch) {
+            this.batch = batch;
+        }
 
         @Override
         public void run() {

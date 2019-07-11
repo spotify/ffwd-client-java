@@ -39,7 +39,9 @@ public class FastForward {
         return setup(InetAddress.getByName(host));
     }
 
-    public static FastForward setup(String host, int port) throws UnknownHostException, SocketException {
+    public static FastForward setup(String host, int port)
+        throws UnknownHostException, SocketException
+    {
         return setup(InetAddress.getByName(host), port);
     }
 
