@@ -4,7 +4,8 @@
 #
 version: 2
 jobs:
-    working_directory: ~/ffwd-java-client
+  build:
+    working_directory: ~/ffwd-client-java
 
     steps:
       - checkout
