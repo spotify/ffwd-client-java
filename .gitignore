@@ -1,2 +1,26 @@
-.idea/
+.*.swp~
+.*.un~
+*.class
+*.iml
+.classpath
+.project
+.settings
+!/.idea/codeStyleSettings.xml
+.idea
+dependency-reduced-pom.xml
+/.cache/*
+.DS_Store
+
+# Build products and artifacts
 target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+.attach_pid*
+
+# Documentation build
+/docs/_site/
+
+.pr-train.yml
