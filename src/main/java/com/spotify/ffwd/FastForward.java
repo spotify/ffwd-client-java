@@ -74,10 +74,6 @@ public class FastForward {
         sendFrame(metric.serialize());
     }
 
-    public void send(Event event) throws IOException {
-        sendFrame(event.serialize());
-    }
-
     private void sendFrame(byte[] bytes) throws IOException {
         final ByteBuffer buffer = ByteBuffer.allocate(bytes.length + 8);
         buffer.order(ByteOrder.BIG_ENDIAN);
@@ -100,7 +96,4 @@ public class FastForward {
         return new Metric().key(key);
     }
 
-    public static Event event(String key) {
-        return new Event().key(key);
-    }
 }

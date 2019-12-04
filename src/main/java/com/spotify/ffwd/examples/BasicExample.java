@@ -16,23 +16,23 @@
 
 package com.spotify.ffwd.examples;
 
-import com.spotify.ffwd.Event;
 import com.spotify.ffwd.FastForward;
+import com.spotify.ffwd.Metric;
 import java.io.IOException;
 
 public class BasicExample {
-    public static void main(String[] args) throws IOException {
-        FastForward client = FastForward.setup();
 
-        // event with attribute
-        client.send(FastForward.event("hello").attribute("foo", "bar"));
+  public static void main(String[] args) throws IOException {
+    FastForward client = FastForward.setup();
 
-        // Events are immutable, so it's possible to use another event as a basis for new ones.
-        final Event e = FastForward.event("hello").attribute("foo", "bar");
-        client.send(e.tag("mytag"));
-        client.send(e.tag("anothertag"));
+    // Metrics are immutable, so it's possible to use another metric as a basis for new ones.
+    final Metric e = FastForward.metric("hello").attribute("foo", "bar");
+    client.send(e.attribute("mytag", "value"));
 
-        // metric with attribute, time and value.
-        client.send(FastForward.metric("hello").attribute("foo", "bar").time(System.currentTimeMillis()).value(0.2));
-    }
+    // metric with attribute, time and value.
+    client.send(FastForward.metric("hello")
+        .attribute("foo", "bar")
+        .time(System.currentTimeMillis())
+        .value(0.2));
+  }
 }
