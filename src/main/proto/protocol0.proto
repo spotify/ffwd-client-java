@@ -42,5 +42,8 @@ message Attribute {
 }
 
 message Message {
+  reserved 2;
+  reserved "event";
+
   optional Metric metric = 1;
 }
