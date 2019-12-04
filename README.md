@@ -1,6 +1,6 @@
 # A java client to FastForward
 
-[![Build Status](https://travis-ci.org/spotify/ffwd-java-client.svg?branch=master)](https://travis-ci.org/spotify/ffwd-java-client)
+[![CircleCI](https://circleci.com/gh/spotify/ffwd-client-java.svg?style=svg)](https://circleci.com/gh/spotify/ffwd-client-java)
 
 A java client for the native protobuf protocol of [ffwd](https://github.com/spotify/ffwd).
 
