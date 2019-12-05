@@ -40,8 +40,8 @@ At this time histograms/distributions are not supported in Heroic until [#476](h
 ```
 
 ```java
-FfwdStatsExporter.createAndRegister(
-   FfwdStatsConfiguration.builder().setExporterIntervalSeconds(30).build()
+com.spotify.ffwd.FfwdStatsExporter.createAndRegister(
+   com.spotify.ffwd.FfwdStatsConfiguration.builder().setExporterIntervalSeconds(30).build()
 );
 ```
 

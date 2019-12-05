@@ -18,6 +18,8 @@
  * -/-/-
  */
 
+package com.spotify.ffwd;
+
 public class FfwdStatsConfiguration {
   private String ffwdHost;
   private int ffwdPort;

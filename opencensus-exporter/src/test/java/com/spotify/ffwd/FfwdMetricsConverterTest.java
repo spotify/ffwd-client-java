@@ -18,10 +18,11 @@
  * -/-/-
  */
 
+package com.spotify.ffwd;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 
-import com.spotify.ffwd.FastForward;
 import io.opencensus.common.Timestamp;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;

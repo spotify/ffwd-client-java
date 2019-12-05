@@ -18,8 +18,9 @@
  * -/-/-
  */
 
+package com.spotify.ffwd;
+
 import com.google.common.base.Strings;
-import com.spotify.ffwd.FastForward;
 import io.opencensus.common.Function;
 import io.opencensus.common.Functions;
 import io.opencensus.exporter.metrics.util.MetricExporter;

@@ -18,6 +18,8 @@
  * -/-/-
  */
 
+package com.spotify.ffwd;
+
 import static io.opencensus.internal.Utils.checkState;
 
 import io.opencensus.common.Duration;
@@ -37,8 +39,8 @@ import org.slf4j.LoggerFactory;
  *
  * <pre><code>
  *   public static void main(String[] args) {
- *     FfwdStatsExporter.createAndRegister(
- *         FfwdStatsConfiguration
+ *     com.spotify.ffwd.FfwdStatsExporter.createAndRegister(
+ *         com.spotify.ffwd.FfwdStatsConfiguration
  *             .builder()
  *             .setExporterIntervalSeconds(60)
  *             .build());
@@ -80,7 +82,7 @@ public class FfwdStatsExporter {
   /**
    * Creates a ffwd stats exporter with a {@link FfwdStatsConfiguration}.
    *
-   * @param configuration the {@code FfwdStatsConfiguration}.
+   * @param configuration the {@code com.spotify.ffwd.FfwdStatsConfiguration}.
    * @throws IllegalStateException if a ffwd exporter is already created.
    */
   public static void createAndRegister(final FfwdStatsConfiguration configuration) {
