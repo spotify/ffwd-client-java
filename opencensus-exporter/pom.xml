@@ -11,9 +11,9 @@
     </parent>
 
     <artifactId>opencensus-exporter</artifactId>
+    <version>0.1.1-SNAPSHOT</version>
     <name>FastForward OpenCensus Exporter</name>
     <description>Export OpenCensus metrics to ffwd.</description>
-    <url>https://github.com/spotify/ffwd-client-java</url>
 
     <dependencies>
         <dependency>
