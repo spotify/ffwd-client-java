@@ -10,9 +10,10 @@
         <version>0.1.1-SNAPSHOT</version>
     </parent>
 
-
     <artifactId>ffwd-client</artifactId>
     <version>0.1.1-SNAPSHOT</version>
+    <name>FastForward Java Client</name>
+    <description>FastForward client for Java.</description>
 
     <dependencies>
         <dependency>

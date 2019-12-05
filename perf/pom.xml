@@ -9,7 +9,7 @@
 
   <artifactId>perf</artifactId>
   <packaging>jar</packaging>
-  <name>FastForward Perf</name>
+  <name>FastForward Performance</name>
   <description>FastForward Stress Tester.</description>
   <url>https://github.com/spotify/ffwd-client-java</url>
 

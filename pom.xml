@@ -12,7 +12,7 @@
   </modules>
 
   <packaging>pom</packaging>
-  <name>FastForward Client</name>
+  <name>FastForward Parent POM</name>
   <description>FastForward client for Java.</description>
   <url>https://github.com/spotify/ffwd-client-java</url>
 
