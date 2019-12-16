@@ -44,9 +44,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FfwdMetricsConverter extends MetricExporter {
+
   private static final Logger LOG = LoggerFactory.getLogger(FfwdMetricsConverter.class);
 
   private FastForward client;
+
   FfwdMetricsConverter(final String ffwdHost, final int ffwdPort) {
     try {
       client = FastForward.setup(ffwdHost, ffwdPort);
@@ -97,10 +99,6 @@ public class FfwdMetricsConverter extends MetricExporter {
           // TODO: Add stat: min/max/average/p75/p99
           return List.of(
               new com.spotify.ffwd.Metric().value(snapshot.get(50).getValue())
-              //new com.spotify.ffwd.Metric().value(snapshot.get(50).getValue()),
-              //new com.spotify.ffwd.Metric().value(snapshot.get(75).getValue()),
-              //new com.spotify.ffwd.Metric().value(snapshot.get(99).getValue()),
-              //new com.spotify.ffwd.Metric().value(snapshot.get(100).getValue())
           );
         }
       };
@@ -108,7 +106,7 @@ public class FfwdMetricsConverter extends MetricExporter {
   public void export(Collection<Metric> collection) {
     final ArrayList<com.spotify.ffwd.Metric> metrics = new ArrayList<>();
 
-    for (Metric metric: collection) {
+    for (Metric metric : collection) {
       for (TimeSeries timeSeries : metric.getTimeSeriesList()) {
         for (final Point point : timeSeries.getPoints()) {
           final List<com.spotify.ffwd.Metric> values = point.getValue().match(
