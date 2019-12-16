@@ -5,11 +5,11 @@
     <parent>
         <artifactId>ffwd-parent</artifactId>
         <groupId>com.spotify.ffwd</groupId>
-        <version>0.2.1</version>
+        <version>0.2.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>ffwd-client</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2-SNAPSHOT</version>
     <name>FastForward Java Client</name>
     <description>FastForward client for Java.</description>
 
