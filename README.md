@@ -46,16 +46,24 @@ com.spotify.ffwd.FfwdStatsExporter.createAndRegister(
 ```
 
 
-## Contributing
+# Contributing
 
 1. Fork ffwd-java-client from [GitHub](https://github.com/spotify/ffwd-java-client) and clone your fork.
 2. Hack.
 3. Push the branch back to GitHub.
 4. Send a pull request to our upstream repo.
 
-## Releasing
 
-```sh
-#> mvn versions:set -DnewVersion=<version>
-#> mvn clean deploy -P release
-```
+# Releasing
+
+Releasing is done via the `maven-release-plugin` and `nexus-staging-plugin` which are configured via the
+`release` [profile](https://github.com/spotify/semantic-metrics/blob/master/pom.xml#L140). Deploys are staged in oss.sonatype.org before being deployed to Maven Central. Check out the [maven-release-plugin docs](http://maven.apache.org/maven-release/maven-release-plugin/) and the [nexus-staging-plugin docs](https://help.sonatype.com/repomanager2) for more information. 
+
+To release, first run: 
+
+``mvn -P release release:prepare``
+
+You will be prompted for the release version and the next development version. On success, follow with:
+
+``mvn -P release release:perform``
+
