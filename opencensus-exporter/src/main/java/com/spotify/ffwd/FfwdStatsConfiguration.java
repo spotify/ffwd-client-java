@@ -55,12 +55,12 @@ public class FfwdStatsConfiguration {
 
     public FfwdStatsConfigurationBuilder() {}
 
-    public FfwdStatsConfigurationBuilder setFfwdHost(final String ffwdHost) {
+    public FfwdStatsConfigurationBuilder setHost(final String ffwdHost) {
       this.ffwdHost = ffwdHost;
       return this;
     }
 
-    public FfwdStatsConfigurationBuilder setFfwdPort(final int ffwdPort) {
+    public FfwdStatsConfigurationBuilder setPort(final int ffwdPort) {
       this.ffwdPort = ffwdPort;
       return this;
     }
