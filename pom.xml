@@ -126,6 +126,9 @@
           </dependency>
         </dependencies>
         <configuration>
+          <sourceDirectories>
+            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+          </sourceDirectories>
           <configLocation>spotify_checks.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <!-- Remove or switch to false to keep building even with checkstyle errors -->
