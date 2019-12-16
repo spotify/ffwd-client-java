@@ -6,6 +6,14 @@ A java client for the native protobuf protocol of [ffwd](https://github.com/spot
 
 ## Usage
 
+```xml
+<dependency>
+    <groupId>com.spotify.ffwd</groupId>
+    <artifactId>ffwd-client</artifactId>
+    <version>LATEST-VERSION</version>
+</dependency>
+```
+
 ```java
 public class Foo {
     private static final FastForward ffwd = FastForward.setup();
@@ -17,9 +25,26 @@ public class Foo {
 }
 ```
 
-## Installation
+## OpenCensus Exporter
 
-ffwd-java-client is built and distributed through maven.
+All registered OpenCensus Stats views will be exported to FFWD.
+
+At this time histograms/distributions are not supported in Heroic until [#476](https://github.com/spotify/heroic/issues/476) is resolved.
+
+```xml
+<dependency>
+    <groupId>com.spotify.ffwd</groupId>
+    <artifactId>opencensus-exporter</artifactId>
+    <version>LATEST-VERSION</version>
+</dependency>
+```
+
+```java
+com.spotify.ffwd.FfwdStatsExporter.createAndRegister(
+   com.spotify.ffwd.FfwdStatsConfiguration.builder().setExporterIntervalSeconds(30).build()
+);
+```
+
 
 ## Contributing
 
