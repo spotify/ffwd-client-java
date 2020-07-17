@@ -39,8 +39,8 @@ message Metric {
 
 message Value {
     oneof value {
-        double doubleValue = 1;
-        bytes distributionValue = 2;
+        double double_value = 1;
+        bytes distribution_value= 2;
     }
 }
 

@@ -18,9 +18,26 @@
  * -/-/-
  */
 
+/*
+ * FastForward Client
+ *   --
+ *   Copyright (C) 2016 - 2019 Spotify AB
+ *   --
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ */
+
 package com.spotify.ffwd.v1;
 
-import com.google.common.base.Objects;
 import com.google.protobuf.ByteString;
 import com.spotify.ffwd.protocol1.Protocol1;
 import java.util.ArrayList;
@@ -29,7 +46,8 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Metric<T> {
+
+public class Metric {
 
   private static final long PROC = 1 << 0;
   private static final long TIME = 1 << 1;
@@ -43,7 +61,7 @@ public class Metric<T> {
   private final String proc;
   private final long time;
   private final String key;
-  private final Value<T> value;
+  private final Value value;
   private final String host;
   private final List<String> tags;
   private final Map<String, String> attributes;
@@ -60,7 +78,7 @@ public class Metric<T> {
   }
 
   public Metric(
-      long has, String proc, long time, String key, Value<T> value, String host,
+      long has, String proc, long time, String key, Value value, String host,
       List<String> tags, Map<String, String> attributes
   ) {
     this.has = has;
@@ -75,51 +93,51 @@ public class Metric<T> {
 
   private boolean test(long n) {
     return (has & n) != 0;
-  }  //TODO This is technically not needed anymore since proto3 doesn't
+  }
 
   private long set(long n) {
     return has | n;
   }
 
-  public Metric<T> proc(String proc) {
-    return new Metric<>(set(PROC), proc, time, key, value, host, tags, attributes);
+  public Metric proc(String proc) {
+    return new Metric(set(PROC), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> time(long time) {
-    return new Metric<>(set(TIME), proc, time, key, value, host, tags, attributes);
+  public Metric time(long time) {
+    return new Metric(set(TIME), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> key(String key) {
-    return new Metric<>(set(KEY), proc, time, key, value, host, tags, attributes);
+  public Metric key(String key) {
+    return new Metric(set(KEY), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> value(Value<T> value) {
-    return new Metric<>(set(VALUE), proc, time, key, value, host, tags, attributes);
+  public Metric value(Value value) {
+    return new Metric(set(VALUE), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> host(String host) {
-    return new Metric<>(set(HOST), proc, time, key, value, host, tags, attributes);
+  public Metric host(String host) {
+    return new Metric(set(HOST), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> tag(String tag) {
+  public Metric tag(String tag) {
     final List<String> tags = new ArrayList<>(this.tags);
     tags.add(tag);
-    return new Metric<>(set(TAGS), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(TAGS), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> tags(List<String> tags) {
-    return new Metric<>(set(TAGS), proc, time, key, value, host,
+  public Metric tags(List<String> tags) {
+    return new Metric(set(TAGS), proc, time, key, value, host,
         new ArrayList<>(tags), attributes);
   }
 
-  public Metric<T> attribute(String k, String v) {
+  public Metric attribute(String k, String v) {
     final Map<String, String> attributes = new HashMap<>(this.attributes);
     attributes.put(k, v);
-    return new Metric<>(set(ATTRIBUTES), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(ATTRIBUTES), proc, time, key, value, host, tags, attributes);
   }
 
-  public Metric<T> attributes(Map<String, String> attributes) {
-    return new Metric<>(set(ATTRIBUTES), proc, time, key, value, host, tags,
+  public Metric attributes(Map<String, String> attributes) {
+    return new Metric(set(ATTRIBUTES), proc, time, key, value, host, tags,
         new HashMap<>(attributes));
   }
 
@@ -139,16 +157,15 @@ public class Metric<T> {
     }
 
     if (test(VALUE)) {
-      if (value instanceof DistributionValue) {
-        ByteString byteString = ByteString.copyFrom(((DistributionValue)value).getValue());
-        builder.setValue(Protocol1.Value.newBuilder()
-            .setDistributionValue(byteString));
-      } else if (value instanceof DoubleValue) {
-        builder.setValue(Protocol1.Value.newBuilder()
-            .setDoubleValue(((DoubleValue) value).getValue()).build());
-      } else {
-        throw new IllegalArgumentException("Value type not supported");
+      if (value instanceof Value.DoubleValue) {
+        Value.DoubleValue doubleValue = (Value.DoubleValue) value;
+        builder.setValue(Protocol1.Value.newBuilder().setDoubleValue(doubleValue.getValue()));
+      } else if (value instanceof Value.DistributionValue) {
+        Value.DistributionValue distributionValue = (Value.DistributionValue) value;
+        ByteString byteString = ByteString.copyFrom(distributionValue.getValue());
+        builder.setValue(Protocol1.Value.newBuilder().setDistributionValue(byteString));
       }
+
     }
 
     if (test(HOST)) {
@@ -183,40 +200,82 @@ public class Metric<T> {
         .toByteArray();
   }
 
-  @Override
   public boolean equals(final Object o) {
-    if (this == o) {
+    if (o == this) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (!(o instanceof Metric)) {
       return false;
     }
-    final Metric metric = (Metric) o;
-    return has == metric.has
-           &&
-           getTime() == metric.getTime()
-           &&
-           com.google.common.base.Objects.equal(getProc(), metric.getProc())
-           &&
-           com.google.common.base.Objects.equal(getKey(), metric.getKey())
-           &&
-           com.google.common.base.Objects.equal(getValue(), metric.getValue())
-           &&
-           com.google.common.base.Objects.equal(getHost(), metric.getHost())
-           &&
-           com.google.common.base.Objects.equal(getTags(), metric.getTags())
-           &&
-           com.google.common.base.Objects.equal(getAttributes(), metric.getAttributes());
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hashCode(has, getProc(), getTime(), getKey(), getValue(), getHost(), getTags(),
-        getAttributes());
+    final Metric other = (Metric) o;
+    if (!other.canEqual((Object) this)) {
+      return false;
+    }
+    if (this.has != other.has) {
+      return false;
+    }
+    final Object this$proc = this.proc;
+    final Object other$proc = other.proc;
+    if (this$proc == null ? other$proc != null : !this$proc.equals(other$proc)) {
+      return false;
+    }
+    if (this.time != other.time) {
+      return false;
+    }
+    final Object this$key = this.key;
+    final Object other$key = other.key;
+    if (this$key == null ? other$key != null : !this$key.equals(other$key)) {
+      return false;
+    }
+    final Object this$value = this.value;
+    final Object other$value = other.value;
+    if (this$value == null ? other$value != null : !this$value.equals(other$value)) {
+      return false;
+    }
+    final Object this$host = this.host;
+    final Object other$host = other.host;
+    if (this$host == null ? other$host != null : !this$host.equals(other$host)) {
+      return false;
+    }
+    final Object this$tags = this.tags;
+    final Object other$tags = other.tags;
+    if (this$tags == null ? other$tags != null : !this$tags.equals(other$tags)) {
+      return false;
+    }
+    final Object this$attributes = this.attributes;
+    final Object other$attributes = other.attributes;
+    if (this$attributes == null ? other$attributes != null
+                                : !this$attributes.equals(other$attributes)) {
+      return false;
+    }
+    return true;
   }
 
   private boolean canEqual(final Object other) {
-    return other instanceof Metric;
+    return other instanceof com.spotify.ffwd.Metric;
+  }
+
+  @SuppressWarnings({"AbbreviationAsWordInName"})
+  public int hashCode() {
+    final int PRIME = 59;
+    int result = 1;
+    final long $has = this.has;
+    result = result * PRIME + (int) ($has >>> 32 ^ $has);
+    final Object $proc = this.proc;
+    result = result * PRIME + ($proc == null ? 43 : $proc.hashCode());
+    final long $time = this.time;
+    result = result * PRIME + (int) ($time >>> 32 ^ $time);
+    final Object $key = this.key;
+    result = result * PRIME + ($key == null ? 43 : $key.hashCode());
+    final Object $value = this.value;
+    result = result * PRIME + ($value == null ? 43 : $value.hashCode());
+    final Object $host = this.host;
+    result = result * PRIME + ($host == null ? 43 : $host.hashCode());
+    final Object $tags = this.tags;
+    result = result * PRIME + ($tags == null ? 43 : $tags.hashCode());
+    final Object $attributes = this.attributes;
+    result = result * PRIME + ($attributes == null ? 43 : $attributes.hashCode());
+    return result;
   }
 
   public String getProc() {
@@ -231,7 +290,7 @@ public class Metric<T> {
     return this.key;
   }
 
-  public Value<T> getValue() {
+  public Value getValue() {
     return this.value;
   }
 
