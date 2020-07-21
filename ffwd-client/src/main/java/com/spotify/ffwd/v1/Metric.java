@@ -46,10 +46,8 @@ import java.util.List;
 import java.util.Map;
 
 
-
 public class Metric {
 
-  private static final long PROC = 1 << 0;
   private static final long TIME = 1 << 1;
   private static final long KEY = 1 << 2;
   private static final long VALUE = 1 << 3;
@@ -58,7 +56,6 @@ public class Metric {
   private static final long ATTRIBUTES = 1 << 6;
 
   private final long has;
-  private final String proc;
   private final long time;
   private final String key;
   private final Value value;
@@ -68,7 +65,6 @@ public class Metric {
 
   public Metric() {
     this.has = 0;
-    this.proc = null;
     this.time = 0;
     this.key = null;
     this.value = null;
@@ -78,11 +74,10 @@ public class Metric {
   }
 
   public Metric(
-      long has, String proc, long time, String key, Value value, String host,
+      long has, long time, String key, Value value, String host,
       List<String> tags, Map<String, String> attributes
   ) {
     this.has = has;
-    this.proc = proc;
     this.time = time;
     this.key = key;
     this.value = value;
@@ -99,54 +94,46 @@ public class Metric {
     return has | n;
   }
 
-  public Metric proc(String proc) {
-    return new Metric(set(PROC), proc, time, key, value, host, tags, attributes);
-  }
-
   public Metric time(long time) {
-    return new Metric(set(TIME), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(TIME), time, key, value, host, tags, attributes);
   }
 
   public Metric key(String key) {
-    return new Metric(set(KEY), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(KEY), time, key, value, host, tags, attributes);
   }
 
   public Metric value(Value value) {
-    return new Metric(set(VALUE), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(VALUE), time, key, value, host, tags, attributes);
   }
 
   public Metric host(String host) {
-    return new Metric(set(HOST), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(HOST), time, key, value, host, tags, attributes);
   }
 
   public Metric tag(String tag) {
     final List<String> tags = new ArrayList<>(this.tags);
     tags.add(tag);
-    return new Metric(set(TAGS), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(TAGS), time, key, value, host, tags, attributes);
   }
 
   public Metric tags(List<String> tags) {
-    return new Metric(set(TAGS), proc, time, key, value, host,
+    return new Metric(set(TAGS), time, key, value, host,
         new ArrayList<>(tags), attributes);
   }
 
   public Metric attribute(String k, String v) {
     final Map<String, String> attributes = new HashMap<>(this.attributes);
     attributes.put(k, v);
-    return new Metric(set(ATTRIBUTES), proc, time, key, value, host, tags, attributes);
+    return new Metric(set(ATTRIBUTES), time, key, value, host, tags, attributes);
   }
 
   public Metric attributes(Map<String, String> attributes) {
-    return new Metric(set(ATTRIBUTES), proc, time, key, value, host, tags,
+    return new Metric(set(ATTRIBUTES), time, key, value, host, tags,
         new HashMap<>(attributes));
   }
 
   public byte[] serialize() {
     final Protocol1.Metric.Builder builder = Protocol1.Metric.newBuilder();
-
-    if (test(PROC)) {
-      builder.setProc(proc);
-    }
 
     if (test(TIME)) {
       builder.setTime(time);
@@ -214,11 +201,7 @@ public class Metric {
     if (this.has != other.has) {
       return false;
     }
-    final Object this$proc = this.proc;
-    final Object other$proc = other.proc;
-    if (this$proc == null ? other$proc != null : !this$proc.equals(other$proc)) {
-      return false;
-    }
+
     if (this.time != other.time) {
       return false;
     }
@@ -255,14 +238,12 @@ public class Metric {
     return other instanceof com.spotify.ffwd.Metric;
   }
 
-  @SuppressWarnings({"AbbreviationAsWordInName"})
+  @SuppressWarnings({ "AbbreviationAsWordInName" })
   public int hashCode() {
     final int PRIME = 59;
     int result = 1;
     final long $has = this.has;
     result = result * PRIME + (int) ($has >>> 32 ^ $has);
-    final Object $proc = this.proc;
-    result = result * PRIME + ($proc == null ? 43 : $proc.hashCode());
     final long $time = this.time;
     result = result * PRIME + (int) ($time >>> 32 ^ $time);
     final Object $key = this.key;
@@ -278,9 +259,6 @@ public class Metric {
     return result;
   }
 
-  public String getProc() {
-    return this.proc;
-  }
 
   public long getTime() {
     return this.time;
