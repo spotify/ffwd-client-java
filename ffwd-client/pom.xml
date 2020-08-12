@@ -32,6 +32,14 @@
             <artifactId>protoc</artifactId>
             <type>pom</type>
         </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     
 </project>

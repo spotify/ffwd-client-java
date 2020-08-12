@@ -29,12 +29,17 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-public class FastForward {
+public abstract class FastForward {
 
   public static final int LATEST_VERSION = 0;
   public static final String DEFAULT_HOST = "localhost";
   public static final int DEFAULT_PORT = 19091;
 
+  public abstract void send(Metric metric) throws IOException;
+
+  public static Metric metric(String key) {
+    return new Metric().key(key);
+  }
 
   public static FastForward setup() throws UnknownHostException, SocketException {
     return setup(InetAddress.getByName(DEFAULT_HOST), DEFAULT_PORT);
@@ -60,44 +65,31 @@ public class FastForward {
    * @throws SocketException If a datagram socket cannot be created.
    */
   public static FastForward setup(InetAddress addr, int port) throws SocketException {
-    final DatagramSocket socket = new DatagramSocket();
-    return new FastForward(addr, port, socket);
+    return new FastForward() {
+      private final DatagramSocket socket = new DatagramSocket();
+
+      @Override
+      public void send(Metric metric) throws IOException {
+        sendFrame(metric.serialize());
+      }
+
+      private void sendFrame(byte[] bytes) throws IOException {
+        final ByteBuffer buffer = ByteBuffer.allocate(bytes.length + 8);
+        buffer.order(ByteOrder.BIG_ENDIAN);
+
+        buffer.putInt(LATEST_VERSION);
+        buffer.putInt(buffer.capacity());
+        buffer.put(bytes);
+        buffer.rewind();
+
+        final byte[] send = new byte[buffer.capacity()];
+        buffer.get(send);
+
+        final DatagramPacket packet = new DatagramPacket(send, send.length,
+            addr, port);
+
+        socket.send(packet);
+      }
+    };
   }
-
-  private final InetAddress addr;
-  private final int port;
-  private final DatagramSocket socket;
-
-  private FastForward(InetAddress addr, int port, DatagramSocket socket) {
-    this.addr = addr;
-    this.port = port;
-    this.socket = socket;
-  }
-
-  public void send(Metric metric) throws IOException {
-    sendFrame(metric.serialize());
-  }
-
-  private void sendFrame(byte[] bytes) throws IOException {
-    final ByteBuffer buffer = ByteBuffer.allocate(bytes.length + 8);
-    buffer.order(ByteOrder.BIG_ENDIAN);
-
-    buffer.putInt(LATEST_VERSION);
-    buffer.putInt(buffer.capacity());
-    buffer.put(bytes);
-    buffer.rewind();
-
-    final byte[] send = new byte[buffer.capacity()];
-    buffer.get(send);
-
-    final DatagramPacket packet = new DatagramPacket(send, send.length,
-        addr, port);
-
-    socket.send(packet);
-  }
-
-  public static Metric metric(String key) {
-    return new Metric().key(key);
-  }
-
 }
