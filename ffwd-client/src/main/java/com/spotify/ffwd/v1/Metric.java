@@ -135,7 +135,8 @@ public class Metric {
         ByteString byteString = ByteString.copyFrom(distributionValue.getValue().array());
         builder.setValue(Protocol1.Value.newBuilder().setDistributionValue(byteString));
       } else {
-        throw new IllegalArgumentException("Failed to identify distribution type" + value);
+        throw new IllegalArgumentException("Failed to identify distribution type : [" + value
+                                          + "]");
       }
     }
 
