@@ -18,24 +18,6 @@
  * -/-/-
  */
 
-/*
- * FastForward Client
- *   --
- *   Copyright (C) 2016 - 2019 Spotify AB
- *   --
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- */
-
 package com.spotify.ffwd.v1;
 
 import com.google.protobuf.ByteString;
@@ -67,7 +49,7 @@ public class Metric {
     this.has = 0;
     this.time = 0;
     this.key = null;
-    this.value = null;
+    this.value = Value.doubleValue(0);
     this.host = null;
     this.tags = new ArrayList<>();
     this.attributes = new HashMap<>();
@@ -80,7 +62,7 @@ public class Metric {
     this.has = has;
     this.time = time;
     this.key = key;
-    this.value = value;
+    this.value = (value == null) ? Value.doubleValue(0) : value;
     this.host = host;
     this.tags = tags;
     this.attributes = attributes;
@@ -103,7 +85,8 @@ public class Metric {
   }
 
   public Metric value(Value value) {
-    return new Metric(set(VALUE), time, key, value, host, tags, attributes);
+    Value newValue = (value == null) ? Value.doubleValue(0) : value;
+    return new Metric(set(VALUE), time, key, newValue, host, tags, attributes);
   }
 
   public Metric host(String host) {
@@ -149,10 +132,11 @@ public class Metric {
         builder.setValue(Protocol1.Value.newBuilder().setDoubleValue(doubleValue.getValue()));
       } else if (value instanceof Value.DistributionValue) {
         Value.DistributionValue distributionValue = (Value.DistributionValue) value;
-        ByteString byteString = ByteString.copyFrom(distributionValue.getValue());
+        ByteString byteString = ByteString.copyFrom(distributionValue.getValue().array());
         builder.setValue(Protocol1.Value.newBuilder().setDistributionValue(byteString));
+      } else {
+        throw new IllegalArgumentException("Failed to identify distribution type" + value);
       }
-
     }
 
     if (test(HOST)) {

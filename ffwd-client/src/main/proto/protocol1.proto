@@ -37,6 +37,7 @@ message Metric {
 
 }
 
+// Actual data point value. We currently support 2 types, distribution and double.
 message Value {
     oneof value {
         double double_value = 1;
