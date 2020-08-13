@@ -45,7 +45,7 @@ public class MetricTest {
 
 
   @Test
-  public void testMetricValueNull_default(){
+  public void testMetricValueNullDefault(){
     Metric metric = new Metric();
     assertNotNull(metric.getValue());
     double actual = extractValue(metric);
@@ -90,7 +90,7 @@ public class MetricTest {
   }
 
   @Test
-  public void testSerializeDisTributionValue() throws InvalidProtocolBufferException {
+  public void testSerializeDistributionValue() throws InvalidProtocolBufferException {
     final byte [] pointVal =  DISTRIBUTION_DATA_POINT.getBytes(StandardCharsets.UTF_8);
     ByteBuffer byteBuffer = ByteBuffer.allocate(pointVal.length);
     byteBuffer.put(pointVal);

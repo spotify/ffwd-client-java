@@ -32,8 +32,8 @@ import java.nio.ByteOrder;
 public class FastForward {
 
   /**
-   * If you are using older version, please use Version.V0.
-   * This variable will be eventually remove.
+   * If you are using an older version, please use Version.V0.
+   * This variable will eventually be removed.
    */
   @Deprecated()
   public static final int LATEST_VERSION = 0;
