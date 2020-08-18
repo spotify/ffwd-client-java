@@ -13,6 +13,10 @@
     <name>FastForward Java Client</name>
     <description>FastForward client for Java.</description>
 
+    <properties>
+        <protobuf.version>3.11.1</protobuf.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.google.auto.value</groupId>
@@ -26,11 +30,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protoc</artifactId>
-            <type>pom</type>
+            <version>${protobuf.version}</version>
         </dependency>
         <!-- Test Dependencies -->
         <dependency>
@@ -49,4 +49,27 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>    
+        <plugins>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <protocArtifact>
+                        com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
+                    </protocArtifact>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>    
 </project>
