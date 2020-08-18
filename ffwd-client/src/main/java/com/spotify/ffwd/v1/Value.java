@@ -21,12 +21,16 @@
 package com.spotify.ffwd.v1;
 
 import com.google.auto.value.AutoValue;
-
 import java.nio.ByteBuffer;
 import java.util.function.Function;
 
 
-
+/**
+ * The actual value of the data point.
+ * Currently we support two value types:
+ * Double and Distribution.
+ *
+ */
 public abstract class Value {
 
   Value() {}

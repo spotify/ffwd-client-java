@@ -1,8 +1,8 @@
 /*-
  * -\-\-
- * FastForward Client
+ * FastForward Java Client
  * --
- * Copyright (C) 2016 - 2019 Spotify AB
+ * Copyright (C) 2016 - 2020 Spotify AB
  * --
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,9 +31,30 @@ import java.nio.ByteOrder;
 
 public class FastForward {
 
+  /**
+   * If you are using an older version, please use Version.V0.
+   * This variable will eventually be removed.
+   */
+  @Deprecated()
   public static final int LATEST_VERSION = 0;
+
   public static final String DEFAULT_HOST = "localhost";
   public static final int DEFAULT_PORT = 19091;
+
+  public enum Version {
+    V0(0),
+    V1(1);
+    private final int version;
+
+    Version(final int version) {
+      this.version = version;
+    }
+
+    public int getVersion() {
+      return version;
+    }
+
+  }
 
 
   public static FastForward setup() throws UnknownHostException, SocketException {
@@ -57,6 +78,7 @@ public class FastForward {
    * Initialization method for a FastForward client.
    *
    * @return A new instance of a FastForward client.
+   *
    * @throws SocketException If a datagram socket cannot be created.
    */
   public static FastForward setup(InetAddress addr, int port) throws SocketException {
@@ -74,15 +96,26 @@ public class FastForward {
     this.socket = socket;
   }
 
-  public void send(Metric metric) throws IOException {
-    sendFrame(metric.serialize());
+  protected FastForward() throws UnknownHostException, SocketException {
+    this.addr = InetAddress.getByName(DEFAULT_HOST);
+    this.port = DEFAULT_PORT;
+    this.socket = new DatagramSocket();
   }
 
-  private void sendFrame(byte[] bytes) throws IOException {
+
+  public void send(Metric metric) throws IOException {
+    sendFrame(metric.serialize(), Version.V0);
+  }
+
+  public void send(com.spotify.ffwd.v1.Metric metric) throws IOException {
+    sendFrame(metric.serialize(), Version.V1);
+  }
+
+  void sendFrame(byte[] bytes, Version v) throws IOException {
     final ByteBuffer buffer = ByteBuffer.allocate(bytes.length + 8);
     buffer.order(ByteOrder.BIG_ENDIAN);
 
-    buffer.putInt(LATEST_VERSION);
+    buffer.putInt(v.getVersion());
     buffer.putInt(buffer.capacity());
     buffer.put(bytes);
     buffer.rewind();
@@ -98,6 +131,10 @@ public class FastForward {
 
   public static Metric metric(String key) {
     return new Metric().key(key);
+  }
+
+  public static com.spotify.ffwd.v1.Metric metricV1(String key) {
+    return new com.spotify.ffwd.v1.Metric().key(key);
   }
 
 }
