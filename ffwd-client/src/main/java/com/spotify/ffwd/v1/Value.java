@@ -21,7 +21,7 @@
 package com.spotify.ffwd.v1;
 
 import com.google.auto.value.AutoValue;
-import java.nio.ByteBuffer;
+import com.google.protobuf.ByteString;
 import java.util.function.Function;
 
 
@@ -40,14 +40,14 @@ public abstract class Value {
     return DoubleValue.create(value);
   }
 
-  public static Value distributionValue(ByteBuffer byteBuffer) {
-    return DistributionValue.create(byteBuffer);
+  public static Value distributionValue(ByteString byteString) {
+    return DistributionValue.create(byteString);
   }
 
 
   public abstract <T> T match(
       Function<? super Double, T> doubleFunction,
-      Function<? super ByteBuffer, T> distributionFunction,
+      Function<? super ByteString, T> distributionFunction,
       Function<? super Value, T> defaultFunction);
 
 
@@ -59,7 +59,7 @@ public abstract class Value {
     @Override
     public final <T> T match(
         Function<? super Double, T> doubleFunction,
-        Function<? super ByteBuffer, T> distributionFunction,
+        Function<? super ByteString, T> distributionFunction,
         Function<? super Value, T> defaultFunction) {
       return doubleFunction.apply(getValue());
     }
@@ -81,18 +81,18 @@ public abstract class Value {
     @Override
     public final <T> T match(
         Function<? super Double, T> doubleFunction,
-        Function<? super ByteBuffer, T> distributionFunction,
+        Function<? super ByteString, T> distributionFunction,
         Function<? super Value, T> defaultFunction) {
       return distributionFunction.apply(getValue());
     }
 
 
-    static DistributionValue create(ByteBuffer value) {
+    static DistributionValue create(ByteString value) {
       return new AutoValue_Value_DistributionValue(value);
     }
 
 
-    abstract ByteBuffer getValue();
+    abstract ByteString getValue();
   }
 
 }
