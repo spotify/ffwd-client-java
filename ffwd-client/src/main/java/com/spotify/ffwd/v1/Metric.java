@@ -20,7 +20,6 @@
 
 package com.spotify.ffwd.v1;
 
-import com.google.protobuf.ByteString;
 import com.spotify.ffwd.protocol1.Protocol1;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -132,8 +131,8 @@ public class Metric {
         builder.setValue(Protocol1.Value.newBuilder().setDoubleValue(doubleValue.getValue()));
       } else if (value instanceof Value.DistributionValue) {
         Value.DistributionValue distributionValue = (Value.DistributionValue) value;
-        ByteString byteString = ByteString.copyFrom(distributionValue.getValue().array());
-        builder.setValue(Protocol1.Value.newBuilder().setDistributionValue(byteString));
+        builder.setValue(Protocol1.Value.newBuilder()
+            .setDistributionValue(distributionValue.getValue()));
       } else {
         throw new IllegalArgumentException("Failed to identify distribution type : [" + value
                                           + "]");

@@ -23,6 +23,8 @@ package com.spotify.ffwd.v1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
+import com.google.protobuf.ByteString;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -32,7 +34,7 @@ import org.junit.jupiter.api.Test;
 
 public class ValueTest {
    private static final double DOUBLE_VAL = 0.976;
-   private static final ByteBuffer  DISTRIBUTION_VAL = createSample();
+   private static final ByteString  DISTRIBUTION_VAL = createSample();
 
 
   @Test
@@ -66,9 +68,9 @@ public class ValueTest {
                return null;
              }
            },
-           new Function<ByteBuffer, Object>() {
+           new Function<ByteString, Object>() {
              @Override
-             public Object apply(ByteBuffer arg) {
+             public Object apply(ByteString arg) {
                actual.add(Value.distributionValue(arg));
                return null;
              }
@@ -86,12 +88,12 @@ public class ValueTest {
 
    }
 
-  private static ByteBuffer createSample(){
-    final String fakeDistData = "FAKEDISTRIBUTIONFAKEDISTRIBUTION";
-    final byte [] bytes = fakeDistData.getBytes(StandardCharsets.UTF_8);
+  private static ByteString createSample(){
+    final String data = "FAKEDISTRIBUTIONFAKEDISTRIBUTION";
+    final byte [] bytes = data.getBytes(StandardCharsets.UTF_8);
     ByteBuffer out = ByteBuffer.allocate(bytes.length);
     out.put(bytes);
-    return out;
+    return ByteString.copyFrom(out.array());
   }
 
 

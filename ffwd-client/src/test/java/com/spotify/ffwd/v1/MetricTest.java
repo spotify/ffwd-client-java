@@ -94,7 +94,8 @@ public class MetricTest {
     final byte [] pointVal =  DISTRIBUTION_DATA_POINT.getBytes(StandardCharsets.UTF_8);
     ByteBuffer byteBuffer = ByteBuffer.allocate(pointVal.length);
     byteBuffer.put(pointVal);
-    Metric metricV1 = (new Metric()).value(Value.distributionValue(byteBuffer));
+    Metric metricV1 = (new Metric()).value(Value
+        .distributionValue(ByteString.copyFrom(byteBuffer.array())));
     byte[] bytes =  metricV1.serialize();
     Protocol1.Metric out = Protocol1.Message.newBuilder().mergeFrom(bytes).build().getMetric();
     Protocol1.Value outVal = out.getValue();
