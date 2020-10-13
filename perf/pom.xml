@@ -4,11 +4,11 @@
   <parent>
     <artifactId>ffwd-parent</artifactId>
     <groupId>com.spotify.ffwd</groupId>
-    <version>0.2.3-SNAPSHOT</version>
+    <version>0.2.3</version>
   </parent>
 
   <artifactId>perf</artifactId>
-  <version>0.2.3-SNAPSHOT</version>
+  <version>0.2.3</version>
   <packaging>jar</packaging>
   <name>FastForward Performance</name>
   <description>FastForward Stress Tester.</description>
