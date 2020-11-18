@@ -21,6 +21,7 @@
 package com.spotify.ffwd;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import io.opencensus.common.Function;
 import io.opencensus.common.Functions;
 import io.opencensus.exporter.metrics.util.MetricExporter;
@@ -37,6 +38,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,7 +69,8 @@ public class FfwdMetricsConverter extends MetricExporter {
       new Function<Double, List<com.spotify.ffwd.Metric>>() {
         @Override
         public List<com.spotify.ffwd.Metric> apply(Double value) {
-          return List.of(new com.spotify.ffwd.Metric().value(value));
+          return
+              Collections.singletonList(new com.spotify.ffwd.Metric().value(value));
         }
       };
 
@@ -75,7 +78,8 @@ public class FfwdMetricsConverter extends MetricExporter {
       new Function<Long, List<com.spotify.ffwd.Metric>>() {
         @Override
         public List<com.spotify.ffwd.Metric> apply(Long value) {
-          return List.of(new com.spotify.ffwd.Metric().value(value));
+          return
+              Collections.singletonList(new com.spotify.ffwd.Metric().value(value));
         }
       };
 
@@ -85,7 +89,7 @@ public class FfwdMetricsConverter extends MetricExporter {
         @Override
         public List<com.spotify.ffwd.Metric> apply(Distribution distribution) {
           //TODO: Big task of support distributions in Heroic.
-          return List.of();
+          return new ArrayList<>(ImmutableList.of());
         }
       };
   private static final Function<Summary, List<com.spotify.ffwd.Metric>> typedValueSummaryFunction =
@@ -97,7 +101,7 @@ public class FfwdMetricsConverter extends MetricExporter {
               summary.getSnapshot().getValueAtPercentiles();
 
           // TODO: Add stat: min/max/average/p75/p99
-          return List.of(
+          return Collections.singletonList(
               new com.spotify.ffwd.Metric().value(snapshot.get(50).getValue())
           );
         }

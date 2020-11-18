@@ -32,6 +32,7 @@ import io.opencensus.metrics.export.Point;
 import io.opencensus.metrics.export.TimeSeries;
 import io.opencensus.metrics.export.Value;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -62,16 +63,16 @@ public class FfwdMetricsConverterTest {
     Mockito.doNothing().when(client).send(metricCaptor.capture());
 
     converter.export(
-        List.of(
+        Collections.singletonList(
             Metric.createWithOneTimeSeries(
                 MetricDescriptor.create(
                     "rps-requests",
                     "requests",
                     "requests",
                     MetricDescriptor.Type.CUMULATIVE_DOUBLE,
-                    List.of(LabelKey.create("status-code", "rpc status code"))),
+                    Collections.singletonList(LabelKey.create("status-code", "rpc status code"))),
                 TimeSeries.createWithOnePoint(
-                    List.of(LabelValue.create("200")),
+                    Collections.singletonList(LabelValue.create("200")),
                     Point.create(Value.doubleValue(10.0), Timestamp.create(1575323125, 0)),
                     Timestamp.create(1575323125, 0)))));
 
@@ -84,8 +85,9 @@ public class FfwdMetricsConverterTest {
 
   @Test
   void createTags() {
-    final List<LabelKey> keys = List.of(LabelKey.create("status-code", "rpc status code"));
-    final List<LabelValue> values = List.of(LabelValue.create("200"));
+    final List<LabelKey> keys =
+        Collections.singletonList(LabelKey.create("status-code", "rpc status code"));
+    final List<LabelValue> values = Collections.singletonList(LabelValue.create("200"));
 
     final Map<String, String> tags = FfwdMetricsConverter.createTags(keys, values);
 
@@ -94,8 +96,9 @@ public class FfwdMetricsConverterTest {
 
   @Test
   void createTagsSkipMissingValue() {
-    final List<LabelKey> keys = List.of(LabelKey.create("status-code", "rpc status code"));
-    final List<LabelValue> values = List.of();
+    final List<LabelKey> keys =
+        Collections.singletonList(LabelKey.create("status-code", "rpc status code"));
+    final List<LabelValue> values = Collections.emptyList();
 
     final Map<String, String> tags = FfwdMetricsConverter.createTags(keys, values);
 

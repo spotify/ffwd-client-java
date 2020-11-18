@@ -24,13 +24,14 @@ package com.spotify.ffwd.v1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.spotify.ffwd.protocol1.Protocol1;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
@@ -105,9 +106,10 @@ public class MetricTest {
 
   private Metric createMetric(Value value, long time){
     final long has = 1L;
-    return  new Metric(has, time,KEY,
-        value, HOST, List.of(TAG1,TAG2
-    ), Map.of(KEY,KEYVALUE) );
+    final Map<String, String> attributes = Collections.singletonMap(KEY, KEYVALUE);
+    return new Metric(has, time,KEY,
+        value, HOST, new ArrayList<>(Arrays.asList(TAG1,TAG2)),
+        attributes);
   }
 
   private double extractValue(Metric metric){
