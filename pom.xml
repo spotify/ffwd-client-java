@@ -3,7 +3,7 @@
 
   <groupId>com.spotify.ffwd</groupId>
   <artifactId>ffwd-parent</artifactId>
-  <version>0.2.4-SNAPSHOT</version>
+  <version>0.2.4</version>
 
   <modules>
     <module>opencensus-exporter</module>
@@ -33,7 +33,7 @@
     <connection>scm:git:git@github.com:spotify/ffwd-client-java</connection>
     <developerConnection>scm:git:git@github.com:spotify/ffwd-client-java</developerConnection>
     <url>https://github.com/spotify/ffwd-client-java</url>
-    <tag>HEAD</tag>
+    <tag>v0.2.4</tag>
   </scm>
 
   <properties>
