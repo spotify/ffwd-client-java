@@ -5,11 +5,11 @@
     <parent>
         <artifactId>ffwd-parent</artifactId>
         <groupId>com.spotify.ffwd</groupId>
-        <version>0.2.4</version>
+        <version>0.2.5-SNAPSHOT</version>
     </parent>
 
     <artifactId>opencensus-exporter</artifactId>
-    <version>0.2.4</version>
+    <version>0.2.5-SNAPSHOT</version>
     <name>FastForward OpenCensus Exporter</name>
     <description>Export OpenCensus metrics to ffwd.</description>
 
