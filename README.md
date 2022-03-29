@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+
+This repo is no longer actively maintained. While it should continue to work and there are no major known bugs, we will not be improving ffwd or releasing new versions.
+
 # A java client to FastForward
 
 [![CircleCI](https://circleci.com/gh/spotify/ffwd-client-java.svg?style=svg)](https://circleci.com/gh/spotify/ffwd-client-java)
