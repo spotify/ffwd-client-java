@@ -131,12 +131,12 @@
     <plugins>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.2</version>
         <dependencies>
           <dependency>
             <groupId>com.spotify.checkstyle</groupId>
             <artifactId>spotify-checkstyle-config</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.11</version>
           </dependency>
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
